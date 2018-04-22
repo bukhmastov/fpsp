@@ -10,6 +10,7 @@
 #include "task/screentask1.h"
 #include "task/screentask2.h"
 #include "task/screentask3.h"
+#include "task/screentask4.h"
 #include <iostream>
 #include <time.h>
 #include <algorithm>
@@ -89,8 +90,9 @@ void Core::generate(unsigned int seed) {
     tasks.push_back(new Task(12, 1, "Входной контрольный опрос: вопрос 10", false));
     // tasks part
     tasks.push_back(new Task(13, 2, "Формирование М-последовательности периода N = 7"));
-    tasks.push_back(new Task(14, 3, "Формирование М-последовательности периода N = 2<sup>s</sup> - 1"));
+    tasks.push_back(new Task(14, 3, "Формирование М-последовательности периода N = 2^s - 1"));
     tasks.push_back(new Task(15, 4, "Формирование последовательностей Баркера"));
+    tasks.push_back(new Task(16, 5, "Формирование последовательностей Уолша"));
 
     // summary part
     tasks.push_back(new Task(99, 0, "Результат", false));
@@ -125,6 +127,7 @@ ScreenController* Core::getView(int id) {
         case 13: return new ScreenTask1; break;
         case 14: return new ScreenTask2; break;
         case 15: return new ScreenTask3; break;
+        case 16: return new ScreenTask4; break;
 
         // summary part
         case 99: return ScreenSummary::get(this); break;
