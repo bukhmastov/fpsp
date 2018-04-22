@@ -35,7 +35,10 @@ SOURCES += \
     questionanswerlabel.cpp \
     static.cpp \
     screensummary.cpp \
-    question.cpp
+    question.cpp \
+    view/clickableqlabel.cpp \
+    task/screentask1.cpp \
+    task/screentask2.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,7 +52,11 @@ HEADERS += \
     questionanswerlabel.h \
     static.h \
     screensummary.h \
-    question.h
+    question.h \
+    view/clickableqlabel.h \
+    task/screentask1.h \
+    screencontroller.h \
+    task/screentask2.h
 
 FORMS += \
         mainwindow.ui \
@@ -57,7 +64,9 @@ FORMS += \
     screenabout.ui \
     screendescription.ui \
     screenquestion.ui \
-    screensummary.ui
+    screensummary.ui \
+    task/screentask1.ui \
+    task/screentask2.ui
 
 RESOURCES += \
     resources.qrc

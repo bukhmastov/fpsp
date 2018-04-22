@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>694</width>
-    <height>434</height>
+    <width>600</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -89,7 +89,8 @@
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+           <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+padding: 3px 0px;</string>
           </property>
           <property name="text">
            <string>50 баллов</string>
@@ -100,8 +101,34 @@
           <property name="scaledContents">
            <bool>false</bool>
           </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
           <property name="margin">
            <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="currentResultLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+padding: 2px 9px;
+border: 1px solid  rgb(220, 220, 220);
+border-radius: 2px;
+background-color: rgb(235, 235, 235);</string>
+          </property>
+          <property name="text">
+           <string>Ответ верный</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
@@ -141,8 +168,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>690</width>
-             <height>349</height>
+             <width>596</width>
+             <height>309</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">

@@ -95,7 +95,7 @@
         <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>На выполнение каждого задания дается две попытки. Верное решение с первой попытки дает 2 балла, со второй - 1 балл. Каждое неверное решение отнимает 1 балл.</string>
+        <string>Набор заданий состоит из 15 задач и подзадач. Каждая задача/подзадача также добавляет или отнимает 2 балла.</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -116,6 +116,38 @@
 68 - 84 баллa: &quot;Хорошо&quot;
 50 - 67 баллов: &quot;Удовлетворительно&quot;
 0 - 49 баллов: &quot;Неудовлетворительно&quot;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
+       <property name="text">
+        <string>ВНИМАНИЕ: Ввод полиномов производится в двоичной форме по возрастанию степени. Например: h(x)=1+x&lt;sup&gt;4&lt;/sup&gt;+x&lt;sup&gt;6&lt;/sup&gt; будет выглядеть как h=1000101</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

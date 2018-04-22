@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QString>
+#include <QTimer>
 #include "core.h"
+#include "screencontroller.h"
 
 namespace Ui {
     class MainWindow;
@@ -17,13 +19,15 @@ public:
     ~MainWindow();
     void init(Core);
     void setSeed(unsigned int);
-    void setWidget(QWidget*);
+    void setWidget(ScreenController*);
+    ScreenController* getWidget();
     void setStep(int, QString);
     void setMaxProgress(int);
     void setProgress(int);
     void setNextEnabled(bool);
     void setResetEnabled(bool);
     void setScore(int);
+    void setMessage(QString);
 
 private slots:
     void on_nextButton_clicked(); // next question/step
@@ -32,6 +36,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Core *core;
+    ScreenController *screen;
+    QTimer* messageTimer;
     void clearWidgets(QLayout*);
 };
 

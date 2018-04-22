@@ -2,6 +2,7 @@
 #define CORE_H
 
 #include "windowcontroller.h"
+#include "screencontroller.h"
 #include "question.h"
 #include "task.h"
 
@@ -18,7 +19,7 @@ public:
     int getScore();
 
 private:
-    QWidget* getView(int);
+    ScreenController* getView(int);
 
     WindowController *window;
 

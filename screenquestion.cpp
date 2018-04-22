@@ -1,11 +1,11 @@
-#include "static.h"
 #include "screenquestion.h"
 #include "ui_screenquestion.h"
+#include "static.h"
 #include "questionanswerlabel.h"
 #include "mainwindow.h"
 #include <iostream>
 
-ScreenQuestion::ScreenQuestion(QWidget *parent) : QFrame(parent), ui(new Ui::ScreenQuestion) {
+ScreenQuestion::ScreenQuestion(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenQuestion) {
     ui->setupUi(this);
 }
 
@@ -30,11 +30,19 @@ ScreenQuestion* ScreenQuestion::get(Core *core, Question* question) {
 }
 
 void ScreenQuestion::onRightAnswer() {
+    this->status = true;
     this->core->changeScore(Static::score4quetion);
     this->core->next();
 }
 
 void ScreenQuestion::onWrongAnswer() {
+    this->status = false;
     this->core->changeScore(-Static::score4quetion);
     this->core->next();
+}
+
+bool ScreenQuestion::validate(Core*, QString* message) {
+    message->append("Ответ ");
+    message->append(status ? "верный (+2 балла)" : "неверный (-2 балла)");
+    return true;
 }

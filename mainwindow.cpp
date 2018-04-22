@@ -1,9 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "core.h"
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), core(new Core) {
     ui->setupUi(this);
+
+    ui->currentResultLabel->setVisible(false);
+    messageTimer = new QTimer(this);
+    QObject::connect(messageTimer, &QTimer::timeout, [this]{ setMessage(""); });
+
     core->init(this);
     core->generate();
     core->next();
@@ -11,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow() {
     delete ui;
+    delete messageTimer;
     delete core;
 }
 
@@ -18,9 +25,14 @@ void MainWindow::setSeed(unsigned int seed) {
     core->generate(seed);
 }
 
-void MainWindow::setWidget(QWidget* widget) {
+void MainWindow::setWidget(ScreenController* widget) {
     clearWidgets(ui->contentLayout);
+    screen = widget;
     ui->contentLayout->addWidget(widget);
+}
+
+ScreenController* MainWindow::getWidget() {
+    return screen;
 }
 
 void MainWindow::setStep(int step, QString text) {
@@ -52,6 +64,15 @@ void MainWindow::setScore(int score) {
         }
     }
     ui->scoreLabel->setText(QString("%1 балл" + suffix).arg(score));
+}
+
+void MainWindow::setMessage(QString message) {
+    messageTimer->stop();
+    ui->currentResultLabel->setText(message);
+    ui->currentResultLabel->setVisible(!message.isEmpty());
+    if (!message.isEmpty()) {
+        messageTimer->start(2000);
+    }
 }
 
 void MainWindow::on_nextButton_clicked() {

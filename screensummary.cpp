@@ -2,7 +2,7 @@
 #include "ui_screensummary.h"
 #include <ctime>
 
-ScreenSummary::ScreenSummary(QWidget *parent) : QFrame(parent), ui(new Ui::ScreenSummary) {
+ScreenSummary::ScreenSummary(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenSummary) {
     ui->setupUi(this);
 }
 
@@ -30,4 +30,8 @@ ScreenSummary* ScreenSummary::get(Core *core) {
 
 ScreenSummary::~ScreenSummary() {
     delete ui;
+}
+
+bool ScreenSummary::validate(Core*, QString*) {
+    return false;
 }

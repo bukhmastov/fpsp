@@ -7,6 +7,8 @@
 #include "screendescription.h"
 #include "screenquestion.h"
 #include "screensummary.h"
+#include "task/screentask1.h"
+#include "task/screentask2.h"
 #include <iostream>
 #include <time.h>
 #include <algorithm>
@@ -85,6 +87,8 @@ void Core::generate(unsigned int seed) {
     tasks.push_back(new Task(11, 1, "Входной контрольный опрос: вопрос 9",  false));
     tasks.push_back(new Task(12, 1, "Входной контрольный опрос: вопрос 10", false));
     // tasks part
+    tasks.push_back(new Task(13, 2, "Формирование М-последовательности периода N = 7"));
+    tasks.push_back(new Task(14, 3, "Формирование М-последовательности периода N = 2<sup>s</sup> - 1"));
 
     // summary part
     tasks.push_back(new Task(99, 0, "Результат", false));
@@ -94,7 +98,7 @@ void Core::generate(unsigned int seed) {
     window->setResetEnabled(true);
 }
 
-QWidget* Core::getView(int id) {
+ScreenController* Core::getView(int id) {
     // ------------------------------
     // HERE GOES VIEWS OF TASKS
     // EVERY TASK VIEW SHOULD BE ADDED BELOW
@@ -116,7 +120,8 @@ QWidget* Core::getView(int id) {
         case 11: return ScreenQuestion::get(this, questions.at(questionsOrder.at(8))); break;
         case 12: return ScreenQuestion::get(this, questions.at(questionsOrder.at(9))); break;
         // tasks part
-
+        case 13: return new ScreenTask1; break;
+        case 14: return new ScreenTask2; break;
         // summary part
         case 99: return ScreenSummary::get(this); break;
         default: return NULL;
@@ -129,17 +134,21 @@ void Core::next() {
 }
 
 void Core::next(bool force) {
-    if (force || (score >= 0 && currentTask < tasks.size())) {
-        currentTask++;
-        Task *task = tasks.at(currentTask - 1);
-        window->setStep(task->getNumber(), task->getTitle());
-        window->setProgress(currentTask);
-        window->setScore(score);
-        window->setWidget(getView(task->getId()));
-        window->setNextEnabled(task->getNextButtonActive());
-    } else {
-        currentTask = tasks.size() - 1;
-        next(true);
+    QString message;
+    if (currentTask == 0 || window->getWidget() == nullptr || window->getWidget()->validate(this, &message)) {
+        if (force || (score >= 0 && currentTask < tasks.size())) {
+            currentTask++;
+            Task *task = tasks.at(currentTask - 1);
+            window->setStep(task->getNumber(), task->getTitle());
+            window->setProgress(currentTask);
+            window->setScore(score);
+            window->setMessage(message);
+            window->setWidget(getView(task->getId()));
+            window->setNextEnabled(task->getNextButtonActive());
+        } else {
+            currentTask = tasks.size() - 1;
+            next(true);
+        }
     }
 }
 
