@@ -13,6 +13,7 @@
 #include "task/screentask4.h"
 #include "task/screentask5.h"
 #include "task/screentask6.h"
+#include "task/screentask7.h"
 #include <iostream>
 #include <time.h>
 #include <algorithm>
@@ -97,6 +98,7 @@ void Core::generate(unsigned int seed) {
     tasks.push_back(new Task(16, 5, "Формирование последовательностей Уолша"));
     tasks.push_back(new Task(17, 6, "Формирование предпочтительных пар М-последовательностей"));
     tasks.push_back(new Task(18, 7, "Формирование последовательностей Голда"));
+    tasks.push_back(new Task(19, 8, "Формирование последовательностей малого множества Касами"));
 
     // summary part
     tasks.push_back(new Task(99, 0, "Результат", false));
@@ -134,6 +136,7 @@ ScreenController* Core::getView(int id) {
         case 16: return new ScreenTask4; break;
         case 17: return new ScreenTask5; break;
         case 18: return new ScreenTask6; break;
+        case 19: return new ScreenTask7; break;
 
         // summary part
         case 99: return ScreenSummary::get(this); break;

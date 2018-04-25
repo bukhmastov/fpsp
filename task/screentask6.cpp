@@ -12,49 +12,49 @@ ScreenTask6::~ScreenTask6() {
 }
 
 void ScreenTask6::init() {
-    ui->inputV->addItem("31");
-    ui->inputV->addItem("32");
-    ui->inputV->addItem("33");
-    ui->inputV->addItem("63");
-    ui->inputV->addItem("64");
-    ui->inputV->addItem("65");
     switch (rand() % 5) {
     case 0:
         n = 6;
         h1 = "1100001";
         h2 = "1101101";
-        h12 = "1211212201101";
+        h12 = "1011010001101";
         v = "65";
         break;
     case 1:
         n = 6;
         h1 = "1110011";
         h2 = "1011011";
-        h12 = "1122233331121";
+        h12 = "1100011111101";
         v = "65";
         break;
     case 2:
         n = 6;
         h1 = "1100111";
         h2 = "1101101";
-        h12 = "1211333322211";
+        h12 = "1011111100011";
         v = "65";
         break;
     case 3:
         n = 5;
         h1 = "100101";
         h2 = "110111";
-        h12 = "11022221211";
+        h12 = "11000001011";
         v = "33";
         break;
     case 4:
         n = 5;
         h1 = "101111";
         h2 = "100101";
-        h12 = "10121312211";
+        h12 = "10101110011";
         v = "33";
         break;
     }
+    ui->inputV->addItem("31");
+    ui->inputV->addItem("32");
+    ui->inputV->addItem("33");
+    ui->inputV->addItem("63");
+    ui->inputV->addItem("64");
+    ui->inputV->addItem("65");
     ui->titleH1->setText("h1(x) = " + h1);
     ui->titleH2->setText("h2(x) = " + h2);
 }
