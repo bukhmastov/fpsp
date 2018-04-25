@@ -9,6 +9,7 @@ public:
     static int score4quetion;
     static int score4task;
     static QString getMSequence(QString, QString, int);
+    static QString getXOR(QString, QString);
 };
 
 #endif // STATIC_H

@@ -17,7 +17,7 @@ void ScreenTask1::init() {
     // generate polynom x3 x2 x1 x0
     x0 = 1;
     x1 = rand() % 2;
-    x2 = 1 - x2;
+    x2 = 1 - x1;
     x3 = 1;
     // generate initial symbols
     c0 = rand() % 2;
@@ -79,7 +79,7 @@ bool ScreenTask1::validate(Core* core, QString* message) {
         core->changeScore(-2);
     }
     message->append("\n");
-    QString mSeg = Static::getMSequence(QString::number(x0) + QString::number(x1) + QString::number(x2) + QString::number(x3), QString::number(c0) + QString::number(c1) + QString::number(c2), 7);
+    QString mSeg = Static::getMSequence(QString::number(x3) + QString::number(x2) + QString::number(x1) + QString::number(x0), QString::number(c0) + QString::number(c1) + QString::number(c2), 7);
     if (mSeg == ui->inputB->text()) {
         message->append("Б) Ответ верный (+2 балла)");
         core->changeScore(2);

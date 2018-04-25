@@ -147,7 +147,7 @@
         <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>ВНИМАНИЕ: Ввод полиномов производится в двоичной форме по возрастанию степени. Например: h(x)=1+x&lt;sup&gt;4&lt;/sup&gt;+x&lt;sup&gt;6&lt;/sup&gt; будет выглядеть как h=1000101</string>
+        <string>ВНИМАНИЕ: Ввод полиномов производится в двоичной форме по убыванию степени. Например: h(x)=x&lt;sup&gt;6&lt;/sup&gt;+x&lt;sup&gt;4&lt;/sup&gt;+1 будет выглядеть как h=1010001</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

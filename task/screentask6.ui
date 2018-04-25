@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ScreenTask5</class>
- <widget class="QFrame" name="ScreenTask5">
+ <class>ScreenTask6</class>
+ <widget class="QFrame" name="ScreenTask6">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>859</width>
-    <height>527</height>
+    <width>993</width>
+    <height>509</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,7 +47,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Для полинома степени S=5 h&lt;sub&gt;1&lt;/sub&gt;(x)=x&lt;sup&gt;5&lt;/sup&gt; + 1 определить полином h&lt;sub&gt;2&lt;/sub&gt;(x) и сформировать первые 15 символов М-последовательности, составляющей предпочтительную пару с последовательностью, задаваемой полиномом h&lt;sub&gt;1&lt;/sub&gt;(x). Расчет проводить для единичных исходных символов.</string>
+        <string>Для полиномов h1(x), h2(x) соответствующих предпочтительной паре М-последовательностей, получить проверочный полином для последовательностей Голда. Сформировать первые 15 символов для одной из последовательностей Голда, сложив по модулю 2 (XOR) первые 15 символов М-последовательностей F1(x) и F2(x) (с единичными исходными символами). Определить объем множества последовательностей Голда. </string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -59,6 +59,54 @@
      </item>
      <item>
       <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>5</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="titleH1">
+       <property name="styleSheet">
+        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
+       <property name="text">
+        <string>h1(x) = </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="titleH2">
+       <property name="styleSheet">
+        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
+       <property name="text">
+        <string>h2(x) = </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_4">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
@@ -94,7 +142,7 @@
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
-          <string>h&lt;sub&gt;2&lt;/sub&gt;(x) =</string>
+          <string>hg(x) =</string>
          </property>
         </widget>
        </item>
@@ -108,7 +156,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>370</width>
+           <width>375</width>
            <height>0</height>
           </size>
          </property>
@@ -161,7 +209,7 @@
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
-          <string>F =</string>
+          <string>FG =</string>
          </property>
         </widget>
        </item>
@@ -194,6 +242,67 @@
        </item>
        <item>
         <spacer name="horizontalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <spacer name="horizontalSpacer_9">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="styleSheet">
+          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+         </property>
+         <property name="text">
+          <string>V =</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="inputV">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_10">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
