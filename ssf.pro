@@ -43,7 +43,10 @@ SOURCES += \
     task/screentask4.cpp \
     task/screentask5.cpp \
     task/screentask6.cpp \
-    task/screentask7.cpp
+    task/screentask7.cpp \
+    task/screentask8.cpp \
+    task/screentask9.cpp \
+    screencontroller.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -66,7 +69,9 @@ HEADERS += \
     task/screentask4.h \
     task/screentask5.h \
     task/screentask6.h \
-    task/screentask7.h
+    task/screentask7.h \
+    task/screentask8.h \
+    task/screentask9.h
 
 FORMS += \
         mainwindow.ui \
@@ -81,7 +86,9 @@ FORMS += \
     task/screentask4.ui \
     task/screentask5.ui \
     task/screentask6.ui \
-    task/screentask7.ui
+    task/screentask7.ui \
+    task/screentask8.ui \
+    task/screentask9.ui
 
 RESOURCES += \
     resources.qrc

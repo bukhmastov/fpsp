@@ -18,18 +18,21 @@ void ScreenTask7::init() {
         h2 = "1011011";
         h3 = "1101";
         h13 = "1000100111";
+        h123 = "1011110011100001";
         break;
     case 1:
         h1 = "1011011";
         h2 = "1000011";
         h3 = "1101";
         h13 = "1111101111";
+        h123 = "1111111111110001";
         break;
     case 2:
         h1 = "1000011";
         h2 = "1101101";
         h3 = "1101";
         h13 = "1101010111";
+        h123 = "1010101110010011";
         break;
     }
     ui->inputV->addItem("31");
@@ -39,6 +42,10 @@ void ScreenTask7::init() {
     ui->inputV->addItem("65");
     ui->inputV->addItem("66");
     ui->title->setText(ui->title->text().replace("%h1%", h1));
+    ScreenController::store["task7_h1"] = h1;
+    ScreenController::store["task7_h2"] = h2;
+    ScreenController::store["task7_h3"] = h3;
+    ScreenController::store["task7_h123"] = h123;
 }
 
 bool ScreenTask7::validate(Core* core, QString* message) {

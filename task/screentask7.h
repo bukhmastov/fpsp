@@ -24,6 +24,7 @@ private:
     QString h2;
     QString h3;
     QString h13;
+    QString h123;
 };
 
 #endif // SCREENTASK7_H
