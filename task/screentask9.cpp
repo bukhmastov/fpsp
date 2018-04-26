@@ -4,7 +4,6 @@
 
 ScreenTask9::ScreenTask9(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenTask9) {
     ui->setupUi(this);
-    init();
 }
 
 ScreenTask9::~ScreenTask9() {
@@ -13,7 +12,7 @@ ScreenTask9::~ScreenTask9() {
 
 void ScreenTask9::init() {
     QString ip;
-    switch (rand() % 5) {
+    switch (rnd() % 5) {
     default:
     case 0: ip = "0121-"; break;
     case 1: ip = "1202-"; break;
@@ -45,15 +44,23 @@ void ScreenTask9::init() {
     for (unsigned int i = 0; i < ir.size(); i++) {
         sequence.append(QString::number(ir.at(i)));
     }
+    // setup view
     ui->titleIp->setText(ui->titleIp->text().replace("%ip%", ip));
+    if (readOnly) {
+        ui->inputFRP->setReadOnly(true);
+        ui->inputFRP->setText(sequence);
+    }
 }
 
 bool ScreenTask9::validate(Core* core, QString* message) {
+    if (readOnly) {
+        return true;
+    }
     if (ui->inputFRP->text() == sequence) {
-        message->append("Ответ верный (+2 балла)");
+        message->append(Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("Ответ неверный (-2 балла)");
+        message->append(Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     return true;

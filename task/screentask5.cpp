@@ -1,10 +1,8 @@
 #include "screentask5.h"
 #include "ui_screentask5.h"
-#include "static.h"
 
 ScreenTask5::ScreenTask5(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenTask5) {
     ui->setupUi(this);
-    init();
 }
 
 ScreenTask5::~ScreenTask5() {
@@ -12,9 +10,9 @@ ScreenTask5::~ScreenTask5() {
 }
 
 void ScreenTask5::init() {
-    n = rand() % 2 + 5;
+    n = rnd() % 2 + 5;
     if (n == 5) {
-        switch (rand() % 6) {
+        switch (rnd() % 6) {
         default:
         case 0: polynom1 = "101001"; polynom2 = "111011"; break; // 1  5
         case 1: polynom1 = "101111"; polynom2 = "100101"; break; // 3  15
@@ -25,7 +23,7 @@ void ScreenTask5::init() {
         }
     }
     if (n == 6) {
-        switch (rand() % 6) {
+        switch (rnd() % 6) {
         default:
         case 0: polynom1 = "1100001"; polynom2 = "1110011"; break; // 1  5
         case 1: polynom1 = "1110011"; polynom2 = "1011011"; break; // 5  11
@@ -35,26 +33,29 @@ void ScreenTask5::init() {
         case 5: polynom1 = "1000011"; polynom2 = "1100111"; break; // 31 23
         }
     }
-    QString title;
-    title.append("Для полинома степени S=");
-    title.append(QString::number(n));
-    title.append(" h<sub>1</sub>(x)=");
-    title.append(polynom1);
-    title.append(" определить полином h<sub>2</sub>(x) и сформировать первые 15 символов М-последовательности, составляющей предпочтительную пару с последовательностью, задаваемой полиномом h<sub>1</sub>(x). Расчет проводить для единичных исходных символов.");
+    mSeq = Static::getMSequence(polynom2, 15);
+    // setup view
+    QString title = ui->title->text();
+    title = title.replace("%s%", QString::number(n));
+    title = title.replace("%h%", polynom1);
     ui->title->setText(title);
+    if (readOnly) {
+        ui->inputHX->setReadOnly(true);
+        ui->inputHX->setText(polynom2);
+        ui->inputF->setReadOnly(true);
+        ui->inputF->setText(mSeq);
+    }
 }
 
 bool ScreenTask5::validate(Core* core, QString* message) {
-    QString arg;
-    for (int i = 0; i < n; i++) {
-        arg.append("1");
+    if (readOnly) {
+        return true;
     }
-    QString mSeq = Static::getMSequence(polynom2, arg, 15);
     if (polynom2 == ui->inputHX->text() && mSeq == ui->inputF->text()) {
-        message->append("Ответ верный (+2 балла)");
+        message->append(Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("Ответ неверный (-2 балла)");
+        message->append(Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     return true;

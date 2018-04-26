@@ -2,8 +2,8 @@
 #define SCREENSUMMARY_H
 
 #include <QFrame>
-#include "core.h"
-#include "screencontroller.h"
+#include "util/core.h"
+#include "util/screencontroller.h"
 
 namespace Ui {
     class ScreenSummary;
@@ -16,7 +16,11 @@ public:
     explicit ScreenSummary(QWidget *parent = 0);
     ~ScreenSummary();
     static ScreenSummary* get(Core*);
+    ScreenController* init(int, bool);
     bool validate(Core*, QString*);
+
+protected:
+    void init();
 
 private:
     Ui::ScreenSummary *ui;

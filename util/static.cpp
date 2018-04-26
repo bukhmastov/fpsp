@@ -5,6 +5,16 @@
 int Static::scoreInitial = 50;
 int Static::score4quetion = 2;
 int Static::score4task = 1;
+QString Static::messageAnswerRight = "Ответ верный (+2 балла)";
+QString Static::messageAnswerWrong = "Ответ неверный (-2 балла)";
+
+QString Static::getMSequence(/* polynom x^3+x+1 = 1011 */QString poly, int n) {
+    QString args;
+    for (int i = 0; i < poly.size() - 1; i++) {
+        args.append("1");
+    }
+    return getMSequence(poly, args, n);
+}
 
 QString Static::getMSequence(/* polynom x^3+x+1 = 1011 */QString poly, QString args, int n) {
     QString mSeg;

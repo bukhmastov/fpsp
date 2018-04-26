@@ -150,6 +150,9 @@
            <pointsize>14</pointsize>
           </font>
          </property>
+         <property name="maxLength">
+          <number>15</number>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>

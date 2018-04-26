@@ -9,6 +9,8 @@ ScreenWelcome::~ScreenWelcome() {
     delete ui;
 }
 
+void ScreenWelcome::init() {}
+
 bool ScreenWelcome::validate(Core*, QString*) {
     return true;
 }

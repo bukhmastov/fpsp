@@ -1,14 +1,12 @@
 <RCC>
-    <qresource prefix="/icons">
-        <file>icon.ico</file>
-    </qresource>
-    <qresource prefix="/objects">
-        <file>circuit-template.png</file>
-        <file>relay-off.png</file>
-        <file>relay-on.png</file>
-        <file>circuit-template(s=4).png</file>
-        <file>circuit-template(s=5).png</file>
-        <file>circuit-template(s=6).png</file>
-        <file>circuit-template(s=2).png</file>
+    <qresource prefix="/img">
+        <file>icons/icon.ico</file>
+        <file>objects/circuit-template(s=2).png</file>
+        <file>objects/circuit-template(s=4).png</file>
+        <file>objects/circuit-template(s=5).png</file>
+        <file>objects/circuit-template(s=6).png</file>
+        <file>objects/circuit-template.png</file>
+        <file>objects/relay-off.png</file>
+        <file>objects/relay-on.png</file>
     </qresource>
 </RCC>

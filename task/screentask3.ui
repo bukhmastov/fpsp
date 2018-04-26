@@ -47,7 +47,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Сформировать последовательность Баркера периода N = 4</string>
+        <string>Сформировать последовательность Баркера периода N = %n%</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

@@ -1,6 +1,7 @@
 #ifndef CORE_H
 #define CORE_H
 
+#include "static.h"
 #include "windowcontroller.h"
 #include "screencontroller.h"
 #include "question.h"
@@ -14,12 +15,14 @@ public:
     void generate(unsigned int);
     void next();
     void next(bool);
+    void back();
     void reset();
     void changeScore(int);
     int getScore();
 
 private:
     ScreenController* getView(int);
+    void show(QString);
 
     WindowController *window;
 
@@ -27,6 +30,7 @@ private:
     std::vector<Task*> tasks;
 
     std::vector<int> questionsOrder;
+    unsigned int showedTask = 0;
     unsigned int currentTask = 0;
     int score = 50;
 };

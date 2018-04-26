@@ -2,9 +2,9 @@
 #define SCREENQUESTION_H
 
 #include <QFrame>
-#include "core.h"
-#include "question.h"
-#include "screencontroller.h"
+#include "util/core.h"
+#include "util/screencontroller.h"
+#include "util/question.h"
 
 namespace Ui {
     class ScreenQuestion;
@@ -17,7 +17,11 @@ public:
     explicit ScreenQuestion(QWidget *parent = 0);
     ~ScreenQuestion();
     static ScreenQuestion* get(Core*, Question*);
+    ScreenController* init(int, bool);
     bool validate(Core*, QString*);
+
+protected:
+    void init();
 
 private slots:
     void onRightAnswer();
@@ -25,7 +29,8 @@ private slots:
 
 private:
     Ui::ScreenQuestion *ui;
-    Core *core;
+    Core* core;
+    Question* question;
     bool status = false;
 };
 

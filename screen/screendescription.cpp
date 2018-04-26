@@ -9,6 +9,8 @@ ScreenDescription::~ScreenDescription() {
     delete ui;
 }
 
+void ScreenDescription::init() {}
+
 bool ScreenDescription::validate(Core*, QString*) {
     return true;
 }

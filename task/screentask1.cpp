@@ -1,12 +1,9 @@
 #include "screentask1.h"
 #include "ui_screentask1.h"
 #include "view/clickableqlabel.h"
-#include "static.h"
-#include <iostream>
 
 ScreenTask1::ScreenTask1(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenTask1) {
     ui->setupUi(this);
-    init();
 }
 
 ScreenTask1::~ScreenTask1() {
@@ -16,40 +13,58 @@ ScreenTask1::~ScreenTask1() {
 void ScreenTask1::init() {
     // generate polynom x3 x2 x1 x0
     x0 = 1;
-    x1 = rand() % 2;
+    x1 = rnd() % 2;
     x2 = 1 - x1;
     x3 = 1;
     // generate initial symbols
-    c0 = rand() % 2;
-    c1 = rand() % 2;
-    c2 = rand() % 2;
+    c0 = rnd() % 2;
+    c1 = rnd() % 2;
+    c2 = c0 == 0 && c1 == 0 ? 1 : rnd() % 2;
     // set triggers to off state
     relayH1 = false;
     relayH2 = false;
+    // get m sequence
+    mSeg = Static::getMSequence(QString::number(x3) + QString::number(x2) + QString::number(x1) + QString::number(x0), QString::number(c0) + QString::number(c1) + QString::number(c2), 7);
     // setup view
-    QString titleA = "";
-    titleA.append("A) Составить уравнение для символов М-последовательности, если h(x)=x<sup>3</sup>");
-    titleA.append(x2 == 1 ? "+x<sup>2</sup>" : "");
-    titleA.append(x1 == 1 ? "+x" : "");
-    titleA.append("+1");
-    QString titleB = "";
-    titleB.append("Б) Для исходных символов C<sub>0</sub>=");
-    titleB.append(QString::number(c0));
-    titleB.append(", C<sub>1</sub>=");
-    titleB.append(QString::number(c1));
-    titleB.append(", C<sub>2</sub>=");
-    titleB.append(QString::number(c2));
-    titleB.append(" сформировать М-последовательность F");
+    QString titleA = ui->titleA->text();
+    QString titleB = ui->titleB->text();
+    QString titleAH = "x<sup>3</sup>";
+    titleAH.append(x2 == 1 ? "+x<sup>2</sup>" : "");
+    titleAH.append(x1 == 1 ? "+x" : "");
+    titleAH.append("+1");
+    titleA = titleA.replace("%h%", titleAH);
+    titleB = titleB.replace("%c0%", QString::number(c0));
+    titleB = titleB.replace("%c1%", QString::number(c1));
+    titleB = titleB.replace("%c2%", QString::number(c2));
     ui->titleA->setText(titleA);
     ui->titleB->setText(titleB);
+    if (readOnly) {
+        relayH1 = x1 == 1;
+        relayH2 = x2 == 1;
+        ui->inputA0->setReadOnly(true);
+        ui->inputA0->setValue(x0);
+        ui->inputA1->setReadOnly(true);
+        ui->inputA1->setValue(x1);
+        ui->inputA2->setReadOnly(true);
+        ui->inputA2->setValue(x2);
+        ui->inputB->setReadOnly(true);
+        ui->inputB->setText(mSeg);
+        ui->inputC0->setReadOnly(true);
+        ui->inputC0->setValue(c0);
+        ui->inputC1->setReadOnly(true);
+        ui->inputC1->setValue(c1);
+        ui->inputC2->setReadOnly(true);
+        ui->inputC2->setValue(c2);
+    } else {
+        QObject::connect(ui->relayOnH1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
+        QObject::connect(ui->relayOffH1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
+        QObject::connect(ui->relayOnH2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
+        QObject::connect(ui->relayOffH2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
+    }
     ui->relayOnH1->setVisible(relayH1);
     ui->relayOffH1->setVisible(!relayH1);
     ui->relayOnH2->setVisible(relayH2);
     ui->relayOffH2->setVisible(!relayH2);
-    QObject::connect(ui->relayOnH1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
-    QObject::connect(ui->relayOffH1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
-    QObject::connect(ui->relayOnH2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
-    QObject::connect(ui->relayOffH2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
 }
 
 void ScreenTask1::onRelayClicked(int h) {
@@ -68,36 +83,38 @@ void ScreenTask1::onRelayClicked(int h) {
 }
 
 bool ScreenTask1::validate(Core* core, QString* message) {
-    if (x0 == ui->inputA0->text().toInt() &&
-        x1 == ui->inputA1->text().toInt() &&
-        x2 == ui->inputA2->text().toInt()
+    if (readOnly) {
+        return true;
+    }
+    if (x0 == ui->inputA0->value() &&
+        x1 == ui->inputA1->value() &&
+        x2 == ui->inputA2->value()
     ) {
-        message->append("А) Ответ верный (+2 балла)");
+        message->append("А) " + Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("А) Ответ неверный (-2 балла)");
+        message->append("А) " + Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     message->append("\n");
-    QString mSeg = Static::getMSequence(QString::number(x3) + QString::number(x2) + QString::number(x1) + QString::number(x0), QString::number(c0) + QString::number(c1) + QString::number(c2), 7);
     if (mSeg == ui->inputB->text()) {
-        message->append("Б) Ответ верный (+2 балла)");
+        message->append("Б) " + Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("Б) Ответ неверный (-2 балла)");
+        message->append("Б) " + Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     message->append("\n");
-    if (c0 == ui->inputC0->text().toInt() &&
-        c1 == ui->inputC1->text().toInt() &&
-        c2 == ui->inputC2->text().toInt() &&
+    if (c0 == ui->inputC0->value() &&
+        c1 == ui->inputC1->value() &&
+        c2 == ui->inputC2->value() &&
         ((x1 == 1 && relayH1) || (x1 == 0 && !relayH1)) &&
         ((x2 == 1 && relayH2) || (x2 == 0 && !relayH2))
     ) {
-        message->append("С) Ответ верный (+2 балла)");
+        message->append("С) " + Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("С) Ответ неверный (-2 балла)");
+        message->append("С) " + Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     return true;

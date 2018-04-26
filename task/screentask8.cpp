@@ -1,10 +1,8 @@
 #include "screentask8.h"
 #include "ui_screentask8.h"
-#include "static.h"
 
 ScreenTask8::ScreenTask8(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenTask8) {
     ui->setupUi(this);
-    init();
 }
 
 ScreenTask8::~ScreenTask8() {
@@ -22,7 +20,7 @@ void ScreenTask8::init() {
         h3 = ScreenController::store.at("task7_h3");
         h123 = ScreenController::store.at("task7_h123");
     } else {
-        switch (rand() % 3) {
+        switch (rnd() % 3) {
         default:
         case 0:
             h1 = "1110011";
@@ -44,6 +42,8 @@ void ScreenTask8::init() {
             break;
         }
     }
+    mSeqXOR = Static::getXOR(Static::getXOR(Static::getMSequence(h1, 10), Static::getMSequence(h2, 10)), Static::getMSequence(h3, 10));
+    // setup view
     ui->inputV->addItem("63");
     ui->inputV->addItem("64");
     ui->inputV->addItem("65");
@@ -52,21 +52,31 @@ void ScreenTask8::init() {
     ui->inputV->addItem("513");
     ui->inputV->addItem("521");
     ui->title->setText(ui->title->text().replace("%h1%", h1));
+    if (readOnly) {
+        ui->inputH2->setReadOnly(true);
+        ui->inputH2->setText(h2);
+        ui->inputHKB->setReadOnly(true);
+        ui->inputHKB->setText(h123);
+        ui->inputFKB->setReadOnly(true);
+        ui->inputFKB->setText(mSeqXOR);
+        ui->inputV->setEnabled(false);
+        ui->inputV->setCurrentText("520");
+    }
 }
 
 bool ScreenTask8::validate(Core* core, QString* message) {
-    QString mSeq1 = Static::getMSequence(h1, "111111", 10);
-    QString mSeq2 = Static::getMSequence(h2, "111111", 10);
-    QString mSeq3 = Static::getMSequence(h3, "111", 10);
+    if (readOnly) {
+        return true;
+    }
     if (ui->inputH2->text() == h2 &&
         ui->inputHKB->text() == h123 &&
-        ui->inputFKB->text() == Static::getXOR(Static::getXOR(mSeq1, mSeq2), mSeq3) &&
+        ui->inputFKB->text() == mSeqXOR &&
         ui->inputV->currentText() == "520"
     ) {
-        message->append("Ответ верный (+2 балла)");
+        message->append(Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("Ответ неверный (-2 балла)");
+        message->append(Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     return true;

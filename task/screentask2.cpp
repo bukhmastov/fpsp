@@ -1,10 +1,8 @@
 #include "screentask2.h"
 #include "ui_screentask2.h"
-#include "static.h"
 
 ScreenTask2::ScreenTask2(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenTask2) {
     ui->setupUi(this);
-    init();
 }
 
 ScreenTask2::~ScreenTask2() {
@@ -12,25 +10,25 @@ ScreenTask2::~ScreenTask2() {
 }
 
 void ScreenTask2::init() {
-    s = rand() % 3 + 4;
+    s = rnd() % 3 + 4;
     x0 = 1;
-    x1 = rand() % 2;
-    x2 = rand() % 2;
-    x3 = rand() % 2;
-    x4 = s == 4 ? 1 : rand() % 2;
-    x5 = s == 5 ? 1 : s > 4 ? rand() % 2 : -1;
-    x6 = s == 6 ? 1 : s > 5 ? rand() % 2 : -1;
+    x1 = rnd() % 2;
+    x2 = rnd() % 2;
+    x3 = rnd() % 2;
+    x4 = s == 4 ? 1 : rnd() % 2;
+    x5 = s == 5 ? 1 : s > 4 ? rnd() % 2 : -1;
+    x6 = s == 6 ? 1 : s > 5 ? rnd() % 2 : -1;
     switch (s) {
     default:
     case 4:
-        switch (rand() % 2) {
+        switch (rnd() % 2) {
         default:
         case 0: a = 1;  polynomC = "0010011"; break;
         case 1: a = 7;  polynomC = "0011001"; break;
         }
         break;
     case 5:
-        switch (rand() % 6) {
+        switch (rnd() % 6) {
         default:
         case 0: a = 1;  polynomC = "0100101"; break;
         case 1: a = 3;  polynomC = "0111101"; break;
@@ -41,7 +39,7 @@ void ScreenTask2::init() {
         }
         break;
     case 6:
-        switch (rand() % 6) {
+        switch (rnd() % 6) {
         default:
         case 0: a = 1;  polynomC = "1000011"; break;
         case 1: a = 5;  polynomC = "1100111"; break;
@@ -57,21 +55,31 @@ void ScreenTask2::init() {
     relayH3 = true;
     relayH4 = true;
     relayH5 = true;
-
-    QString title;
-    title.append("Над полем GF(2<sup>").append(QString::number(s)).append("</sup>), pi(x)=");
-    title.append(x6 == 1 ? "x<sup>6</sup>+" : "");
-    title.append(x5 == 1 ? "x<sup>5</sup>+" : "");
-    title.append(x4 == 1 ? "x<sup>4</sup>+" : "");
-    title.append(x3 == 1 ? "x<sup>3</sup>+" : "");
-    title.append(x2 == 1 ? "x<sup>2</sup>+" : "");
-    title.append(x1 == 1 ? "x+" : "");
-    title.append("1, a=x");
-    QString titleA;
-    titleA.append("А) Ввести коэффициенты проверочного полинома h(x), корнем которого является элемент a<sup>").append(QString::number(a)).append("</sup>");
+    QString polynom;
+    polynom.append(x6 == -1 ? "" : QString::number(x6));
+    polynom.append(x5 == -1 ? "" : QString::number(x5));
+    polynom.append(QString::number(x4));
+    polynom.append(QString::number(x3));
+    polynom.append(QString::number(x2));
+    polynom.append(QString::number(x1));
+    polynom.append(QString::number(x0));
+    mSeq = Static::getMSequence(polynomC, 15);
+    // setup view
+    QString title = ui->title->text();
+    QString titleA = ui->titleA->text();
+    QString pi = "";
+    pi.append(x6 == 1 ? "x<sup>6</sup>+" : "");
+    pi.append(x5 == 1 ? "x<sup>5</sup>+" : "");
+    pi.append(x4 == 1 ? "x<sup>4</sup>+" : "");
+    pi.append(x3 == 1 ? "x<sup>3</sup>+" : "");
+    pi.append(x2 == 1 ? "x<sup>2</sup>+" : "");
+    pi.append(x1 == 1 ? "x+" : "");
+    pi.append("1");
+    title = title.replace("%gf%", QString::number(s));
+    title = title.replace("%pi%", pi);
+    titleA = titleA.replace("%a%", QString::number(a));
     ui->title->setText(title);
     ui->titleA->setText(titleA);
-
     switch (s) {
     default:
     case 4:
@@ -90,30 +98,54 @@ void ScreenTask2::init() {
         ui->set6->setVisible(true);
         break;
     }
-    QObject::connect(ui->relayOn4H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
-    QObject::connect(ui->relayOff4H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
-    QObject::connect(ui->relayOn5H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
-    QObject::connect(ui->relayOff5H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
-    QObject::connect(ui->relayOn6H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
-    QObject::connect(ui->relayOff6H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
-    QObject::connect(ui->relayOn4H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
-    QObject::connect(ui->relayOff4H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
-    QObject::connect(ui->relayOn5H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
-    QObject::connect(ui->relayOff5H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
-    QObject::connect(ui->relayOn6H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
-    QObject::connect(ui->relayOff6H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
-    QObject::connect(ui->relayOn4H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
-    QObject::connect(ui->relayOff4H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
-    QObject::connect(ui->relayOn5H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
-    QObject::connect(ui->relayOff5H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
-    QObject::connect(ui->relayOn6H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
-    QObject::connect(ui->relayOff6H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
-    QObject::connect(ui->relayOn5H4, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(4); });
-    QObject::connect(ui->relayOff5H4, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(4); });
-    QObject::connect(ui->relayOn6H4, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(4); });
-    QObject::connect(ui->relayOff6H4, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(4); });
-    QObject::connect(ui->relayOn6H5, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(5); });
-    QObject::connect(ui->relayOff6H5, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(5); });
+    if (readOnly) {
+        ui->inputX6->setReadOnly(true);
+        ui->inputX6->setValue(polynomC.at(0).digitValue());
+        ui->inputX5->setReadOnly(true);
+        ui->inputX5->setValue(polynomC.at(1).digitValue());
+        ui->inputX4->setReadOnly(true);
+        ui->inputX4->setValue(polynomC.at(2).digitValue());
+        ui->inputX3->setReadOnly(true);
+        ui->inputX3->setValue(polynomC.at(3).digitValue());
+        ui->inputX2->setReadOnly(true);
+        ui->inputX2->setValue(polynomC.at(4).digitValue());
+        ui->inputX1->setReadOnly(true);
+        ui->inputX1->setValue(polynomC.at(5).digitValue());
+        ui->inputX0->setReadOnly(true);
+        ui->inputX0->setValue(polynomC.at(6).digitValue());
+        ui->inputMseq->setReadOnly(true);
+        ui->inputMseq->setText(mSeq);
+        relayH1 = polynomC.at(5).digitValue() == 0;
+        relayH2 = polynomC.at(4).digitValue() == 0;
+        relayH3 = polynomC.at(3).digitValue() == 0;
+        relayH4 = polynomC.at(2).digitValue() == 0;
+        relayH5 = polynomC.at(1).digitValue() == 0;
+    } else {
+        QObject::connect(ui->relayOn4H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
+        QObject::connect(ui->relayOff4H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
+        QObject::connect(ui->relayOn5H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
+        QObject::connect(ui->relayOff5H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
+        QObject::connect(ui->relayOn6H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
+        QObject::connect(ui->relayOff6H1, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(1); });
+        QObject::connect(ui->relayOn4H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
+        QObject::connect(ui->relayOff4H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
+        QObject::connect(ui->relayOn5H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
+        QObject::connect(ui->relayOff5H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
+        QObject::connect(ui->relayOn6H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
+        QObject::connect(ui->relayOff6H2, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(2); });
+        QObject::connect(ui->relayOn4H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
+        QObject::connect(ui->relayOff4H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
+        QObject::connect(ui->relayOn5H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
+        QObject::connect(ui->relayOff5H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
+        QObject::connect(ui->relayOn6H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
+        QObject::connect(ui->relayOff6H3, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(3); });
+        QObject::connect(ui->relayOn5H4, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(4); });
+        QObject::connect(ui->relayOff5H4, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(4); });
+        QObject::connect(ui->relayOn6H4, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(4); });
+        QObject::connect(ui->relayOff6H4, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(4); });
+        QObject::connect(ui->relayOn6H5, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(5); });
+        QObject::connect(ui->relayOff6H5, &ClickableQLabel::clicked, this, [this]{ onRelayClicked(5); });
+    }
     onRelayClicked(1);
     onRelayClicked(2);
     onRelayClicked(3);
@@ -166,6 +198,9 @@ void ScreenTask2::onRelayClicked(int h) {
 }
 
 bool ScreenTask2::validate(Core* core, QString* message) {
+    if (readOnly) {
+        return true;
+    }
     QString polynomCAnswer;
     polynomCAnswer.append(ui->inputX6->text());
     polynomCAnswer.append(ui->inputX5->text());
@@ -175,37 +210,24 @@ bool ScreenTask2::validate(Core* core, QString* message) {
     polynomCAnswer.append(ui->inputX1->text());
     polynomCAnswer.append(ui->inputX0->text());
     if (polynomC == polynomCAnswer) {
-        message->append("А) Ответ верный (+2 балла)");
+        message->append("А) " + Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("А) Ответ неверный (-2 балла)");
+        message->append("А) " + Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     message->append("\n");
 
-    QString polynom;
-    polynom.append(x6 == -1 ? "" : QString::number(x6));
-    polynom.append(x5 == -1 ? "" : QString::number(x5));
-    polynom.append(QString::number(x4));
-    polynom.append(QString::number(x3));
-    polynom.append(QString::number(x2));
-    polynom.append(QString::number(x1));
-    polynom.append(QString::number(x0));
-    QString args;
-    for (int i = 0; i < s - 1; i++) {
-        args.append("1");
-    }
-    QString mSeq = Static::getMSequence(polynom, args, 15);
     if (mSeq == ui->inputMseq->text()) {
-        message->append("Б) Ответ верный (+2 балла)");
+        message->append("Б) " + Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("Б) Ответ неверный (-2 балла)");
+        message->append("Б) " + Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     message->append("\n");
 
-    QString polynomCRelayAnswer;
+    QString polynomCRelayAnswer = "";
     polynomCRelayAnswer.append(s < 6 ? "0" : "1");
     polynomCRelayAnswer.append(s < 5 ? "0" : s == 5 ? "1" : relayH5 ? "1" : "0");
     polynomCRelayAnswer.append(s < 4 ? "0" : s == 4 ? "1" : relayH4 ? "1" : "0");
@@ -214,10 +236,10 @@ bool ScreenTask2::validate(Core* core, QString* message) {
     polynomCRelayAnswer.append(relayH1 ? "1" : "0");
     polynomCRelayAnswer.append("1");
     if (polynomCAnswer == polynomCRelayAnswer) {
-        message->append("С) Ответ верный (+2 балла)");
+        message->append("С) " + Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("С) Ответ неверный (-2 балла)");
+        message->append("С) " + Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     return true;

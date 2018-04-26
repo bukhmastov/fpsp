@@ -2,8 +2,8 @@
 #define SCREENWELCOME_H
 
 #include <QFrame>
-#include "core.h"
-#include "screencontroller.h"
+#include "util/core.h"
+#include "util/screencontroller.h"
 
 namespace Ui {
     class ScreenWelcome;
@@ -15,7 +15,11 @@ class ScreenWelcome : public ScreenController {
 public:
     explicit ScreenWelcome(QWidget *parent = 0);
     ~ScreenWelcome();
+    ScreenController* init(int, bool);
     bool validate(Core*, QString*);
+
+protected:
+    void init();
 
 private:
     Ui::ScreenWelcome *ui;

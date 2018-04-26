@@ -9,6 +9,8 @@ ScreenAbout::~ScreenAbout() {
     delete ui;
 }
 
+void ScreenAbout::init() {}
+
 bool ScreenAbout::validate(Core*, QString*) {
     return true;
 }

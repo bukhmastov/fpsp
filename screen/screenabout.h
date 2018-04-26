@@ -2,8 +2,8 @@
 #define SCREENABOUT_H
 
 #include <QFrame>
-#include "core.h"
-#include "screencontroller.h"
+#include "util/core.h"
+#include "util/screencontroller.h"
 
 namespace Ui {
     class ScreenAbout;
@@ -15,7 +15,11 @@ class ScreenAbout : public ScreenController {
 public:
     explicit ScreenAbout(QWidget *parent = 0);
     ~ScreenAbout();
+    ScreenController* init(int, bool);
     bool validate(Core*, QString*);
+
+protected:
+    void init();
 
 private:
     Ui::ScreenAbout *ui;

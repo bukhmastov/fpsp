@@ -47,7 +47,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Для полинома степени S=5 h&lt;sub&gt;1&lt;/sub&gt;(x)=x&lt;sup&gt;5&lt;/sup&gt; + 1 определить полином h&lt;sub&gt;2&lt;/sub&gt;(x) и сформировать первые 15 символов М-последовательности, составляющей предпочтительную пару с последовательностью, задаваемой полиномом h&lt;sub&gt;1&lt;/sub&gt;(x). Расчет проводить для единичных исходных символов.</string>
+        <string>Для полинома степени S=%s% h&lt;sub&gt;1&lt;/sub&gt;(x)=%h% определить полином h&lt;sub&gt;2&lt;/sub&gt;(x) и сформировать первые 15 символов М-последовательности, составляющей предпочтительную пару с последовательностью, задаваемой полиномом h&lt;sub&gt;1&lt;/sub&gt;(x). Расчет проводить для единичных исходных символов.</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -117,6 +117,9 @@
            <pointsize>14</pointsize>
           </font>
          </property>
+         <property name="maxLength">
+          <number>7</number>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -183,6 +186,9 @@
           <font>
            <pointsize>14</pointsize>
           </font>
+         </property>
+         <property name="maxLength">
+          <number>15</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

@@ -3,7 +3,6 @@
 
 ScreenTask10::ScreenTask10(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenTask10) {
     ui->setupUi(this);
-    init();
 }
 
 ScreenTask10::~ScreenTask10() {
@@ -11,7 +10,7 @@ ScreenTask10::~ScreenTask10() {
 }
 
 void ScreenTask10::init() {
-    switch (rand() % 2) {
+    switch (rnd() % 2) {
     default:
     case 0:
         h = "x<sup>2</sup>+x+2";
@@ -34,25 +33,41 @@ void ScreenTask10::init() {
         cA1 = 1;
         break;
     }
+    // setup view
     QString titleA = ui->titleA->text().replace("%h%", h);
     QString titleB = ui->titleB->text();
     titleB.replace("%c0%", QString::number(c0));
     titleB.replace("%c1%", QString::number(c1));
     ui->titleA->setText(titleA);
     ui->titleB->setText(titleB);
+    if (readOnly) {
+        ui->inputC0->setReadOnly(true);
+        ui->inputC0->setValue(cA0);
+        ui->inputC1->setReadOnly(true);
+        ui->inputC1->setValue(cA1);
+        ui->inputF->setReadOnly(true);
+        ui->inputF->setText(f);
+        ui->inputA0->setReadOnly(true);
+        ui->inputA0->setValue(a0);
+        ui->inputA1->setReadOnly(true);
+        ui->inputA1->setValue(a1);
+    }
 }
 
 bool ScreenTask10::validate(Core* core, QString* message) {
-    if (ui->inputC0->text() == QString::number(cA0) &&
-        ui->inputC1->text() == QString::number(cA1) &&
+    if (readOnly) {
+        return true;
+    }
+    if (ui->inputC0->value() == cA0 &&
+        ui->inputC1->value() == cA1 &&
         ui->inputF->text() == f &&
-        ui->inputA0->text() == QString::number(a0) &&
-        ui->inputA1->text() == QString::number(a1)
+        ui->inputA0->value() == a0 &&
+        ui->inputA1->value() == a1
     ) {
-        message->append("Ответ верный (+2 балла)");
+        message->append(Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("Ответ неверный (-2 балла)");
+        message->append(Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     return true;

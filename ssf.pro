@@ -26,17 +26,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    core.cpp \
-    screenwelcome.cpp \
-    task.cpp \
-    screenabout.cpp \
-    screendescription.cpp \
-    screenquestion.cpp \
-    questionanswerlabel.cpp \
-    static.cpp \
-    screensummary.cpp \
-    question.cpp \
+    util/core.cpp \
+    util/static.cpp \
+    util/task.cpp \
+    util/question.cpp \
+    util/screencontroller.cpp \
+    view/questionanswerlabel.cpp \
     view/clickableqlabel.cpp \
+    screen/screenwelcome.cpp \
+    screen/screenabout.cpp \
+    screen/screendescription.cpp \
+    screen/screenquestion.cpp \
+    screen/screensummary.cpp \
     task/screentask1.cpp \
     task/screentask2.cpp \
     task/screentask3.cpp \
@@ -46,25 +47,24 @@ SOURCES += \
     task/screentask7.cpp \
     task/screentask8.cpp \
     task/screentask9.cpp \
-    screencontroller.cpp \
     task/screentask10.cpp
 
 HEADERS += \
         mainwindow.h \
-    windowcontroller.h \
-    task.h \
-    screenwelcome.h \
-    core.h \
-    screenabout.h \
-    screendescription.h \
-    screenquestion.h \
-    questionanswerlabel.h \
-    static.h \
-    screensummary.h \
-    question.h \
+    util/core.h \
+    util/static.h \
+    util/task.h \
+    util/question.h \
+    util/windowcontroller.h \
+    util/screencontroller.h \
+    view/questionanswerlabel.h \
     view/clickableqlabel.h \
+    screen/screenwelcome.h \
+    screen/screenabout.h \
+    screen/screendescription.h \
+    screen/screenquestion.h \
+    screen/screensummary.h \
     task/screentask1.h \
-    screencontroller.h \
     task/screentask2.h \
     task/screentask3.h \
     task/screentask4.h \
@@ -77,11 +77,11 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui \
-    screenwelcome.ui \
-    screenabout.ui \
-    screendescription.ui \
-    screenquestion.ui \
-    screensummary.ui \
+    screen/screenwelcome.ui \
+    screen/screenabout.ui \
+    screen/screendescription.ui \
+    screen/screenquestion.ui \
+    screen/screensummary.ui \
     task/screentask1.ui \
     task/screentask2.ui \
     task/screentask3.ui \
@@ -96,4 +96,4 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-win32:RC_ICONS += icon.ico
+win32:RC_ICONS += icons/icon.ico

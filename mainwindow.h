@@ -4,8 +4,8 @@
 #include <QMainWindow>
 #include <QString>
 #include <QTimer>
-#include "core.h"
-#include "screencontroller.h"
+#include "util/core.h"
+#include "util/screencontroller.h"
 
 namespace Ui {
     class MainWindow;
@@ -25,12 +25,14 @@ public:
     void setMaxProgress(int);
     void setProgress(int);
     void setNextEnabled(bool);
+    void setBackEnabled(bool);
     void setResetEnabled(bool);
     void setScore(int);
     void setMessage(QString);
 
 private slots:
     void on_nextButton_clicked(); // next question/step
+    void on_backButton_clicked(); // prev question/step
     void on_resetButton_clicked(); // reset progress, start from the beginning (eg step -> 0)
 
 private:

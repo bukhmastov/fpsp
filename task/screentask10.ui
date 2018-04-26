@@ -247,6 +247,9 @@
            <pointsize>14</pointsize>
           </font>
          </property>
+         <property name="maxLength">
+          <number>7</number>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -344,7 +347,7 @@
            </rect>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/objects/circuit-template(s=2).png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:img/objects/circuit-template(s=2).png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QSpinBox" name="inputA0">

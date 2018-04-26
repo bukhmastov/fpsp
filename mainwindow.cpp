@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "core.h"
 #include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), core(new Core) {
@@ -51,6 +50,10 @@ void MainWindow::setNextEnabled(bool enabled) {
     ui->nextButton->setEnabled(enabled);
 }
 
+void MainWindow::setBackEnabled(bool enabled) {
+    ui->backButton->setEnabled(enabled);
+}
+
 void MainWindow::setResetEnabled(bool enabled) {
     ui->resetButton->setEnabled(enabled);
 }
@@ -77,6 +80,10 @@ void MainWindow::setMessage(QString message) {
 
 void MainWindow::on_nextButton_clicked() {
     core->next();
+}
+
+void MainWindow::on_backButton_clicked() {
+    core->back();
 }
 
 void MainWindow::on_resetButton_clicked() {

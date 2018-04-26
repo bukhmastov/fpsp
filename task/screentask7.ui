@@ -117,6 +117,9 @@
            <pointsize>14</pointsize>
           </font>
          </property>
+         <property name="maxLength">
+          <number>4</number>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -184,6 +187,9 @@
            <pointsize>14</pointsize>
           </font>
          </property>
+         <property name="maxLength">
+          <number>10</number>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -250,6 +256,9 @@
           <font>
            <pointsize>14</pointsize>
           </font>
+         </property>
+         <property name="maxLength">
+          <number>10</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

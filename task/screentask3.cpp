@@ -3,7 +3,6 @@
 
 ScreenTask3::ScreenTask3(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenTask3) {
     ui->setupUi(this);
-    init();
 }
 
 ScreenTask3::~ScreenTask3() {
@@ -12,7 +11,7 @@ ScreenTask3::~ScreenTask3() {
 
 void ScreenTask3::init() {
     int n;
-    switch (rand() % 6) {
+    switch (rnd() % 6) {
     default:
     case 0: n = 3;  sequence = "+1+1-1"; break;
     case 1: n = 4;  sequence = "+1+1-1+1"; break;
@@ -21,15 +20,22 @@ void ScreenTask3::init() {
     case 4: n = 11; sequence = "+1+1+1–1–1–1+1–1–1+1–1"; break;
     case 5: n = 13; sequence = "+1+1+1+1+1–1–1+1+1-1+1–1+1"; break;
     }
-    ui->title->setText("Сформировать последовательность Баркера периода N = " + QString::number(n));
+    ui->title->setText(ui->title->text().replace("%n%", QString::number(n)));
+    if (readOnly) {
+        ui->input->setReadOnly(true);
+        ui->input->setText(sequence);
+    }
 }
 
 bool ScreenTask3::validate(Core* core, QString* message) {
+    if (readOnly) {
+        return true;
+    }
     if (sequence == ui->input->text()) {
-        message->append("Ответ верный (+2 балла)");
+        message->append(Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("Ответ неверный (-2 балла)");
+        message->append(Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     return true;

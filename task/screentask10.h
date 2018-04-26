@@ -2,8 +2,8 @@
 #define SCREENTASK10_H
 
 #include <QFrame>
-#include "core.h"
-#include "screencontroller.h"
+#include "util/core.h"
+#include "util/screencontroller.h"
 
 namespace Ui {
     class ScreenTask10;
@@ -15,10 +15,13 @@ class ScreenTask10 : public ScreenController {
 public:
     explicit ScreenTask10(QWidget *parent = 0);
     ~ScreenTask10();
+    ScreenController* init(int, bool);
     bool validate(Core*, QString*);
 
-private:
+protected:
     void init();
+
+private:
     Ui::ScreenTask10 *ui;
     QString h;
     int c0;

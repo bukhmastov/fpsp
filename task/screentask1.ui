@@ -47,7 +47,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>A) Составить уравнение для символов М-последовательности, если h(x)=x&lt;sup&gt;3&lt;/sup&gt;+x&lt;sup&gt;2&lt;/sup&gt;+x+1</string>
+        <string>A) Составить уравнение для символов М-последовательности, если h(x)=%h%</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -246,7 +246,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Б) Для исходных символов C&lt;sub&gt;0&lt;/sub&gt;=1, C&lt;sub&gt;1&lt;/sub&gt;=1, C&lt;sub&gt;2&lt;/sub&gt;=1 сформировать М-последовательность F</string>
+        <string>Б) Для исходных символов C&lt;sub&gt;0&lt;/sub&gt;=%c0%, C&lt;sub&gt;1&lt;/sub&gt;=%c1%, C&lt;sub&gt;2&lt;/sub&gt;=%c2% сформировать М-последовательность F</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -315,6 +315,9 @@
           <font>
            <pointsize>14</pointsize>
           </font>
+         </property>
+         <property name="maxLength">
+          <number>7</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -453,7 +456,7 @@
            </size>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/objects/circuit-template.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/img/objects/circuit-template.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QSpinBox" name="inputC2">
@@ -586,7 +589,7 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/objects/relay-on.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:img/objects/relay-on.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="ClickableQLabel" name="relayOnH1">
@@ -620,7 +623,7 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/objects/relay-on.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:img/objects/relay-on.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="ClickableQLabel" name="relayOffH2">
@@ -654,7 +657,7 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/objects/relay-off.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/img/objects/relay-off.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="ClickableQLabel" name="relayOffH1">
@@ -688,7 +691,7 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/objects/relay-off.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/img/objects/relay-off.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </widget>

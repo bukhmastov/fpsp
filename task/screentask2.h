@@ -2,8 +2,8 @@
 #define SCREENTASK2_H
 
 #include <QFrame>
-#include "core.h"
-#include "screencontroller.h"
+#include "util/core.h"
+#include "util/screencontroller.h"
 
 namespace Ui {
     class ScreenTask2;
@@ -15,10 +15,13 @@ class ScreenTask2 : public ScreenController {
 public:
     explicit ScreenTask2(QWidget *parent = 0);
     ~ScreenTask2();
+    ScreenController* init(int, bool);
     bool validate(Core*, QString*);
 
-private:
+protected:
     void init();
+
+private:
     void onRelayClicked(int h);
     Ui::ScreenTask2 *ui;
     int s;
@@ -36,6 +39,7 @@ private:
     bool relayH3 = false;
     bool relayH4 = false;
     bool relayH5 = false;
+    QString mSeq;
 };
 
 #endif // SCREENTASK2_H

@@ -1,5 +1,4 @@
 #include "task.h"
-#include <iostream>
 
 Task::Task(int id, int number, QString title, bool nextButtonActive) {
     this->id = id;

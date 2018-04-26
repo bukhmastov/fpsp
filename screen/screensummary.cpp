@@ -6,6 +6,10 @@ ScreenSummary::ScreenSummary(QWidget *parent) : ScreenController(parent), ui(new
     ui->setupUi(this);
 }
 
+ScreenSummary::~ScreenSummary() {
+    delete ui;
+}
+
 ScreenSummary* ScreenSummary::get(Core *core) {
     ScreenSummary *screen = new ScreenSummary;
     QString mark = "";
@@ -28,9 +32,7 @@ ScreenSummary* ScreenSummary::get(Core *core) {
     return screen;
 }
 
-ScreenSummary::~ScreenSummary() {
-    delete ui;
-}
+void ScreenSummary::init() {}
 
 bool ScreenSummary::validate(Core*, QString*) {
     return false;

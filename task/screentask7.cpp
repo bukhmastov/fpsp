@@ -1,10 +1,8 @@
 #include "screentask7.h"
 #include "ui_screentask7.h"
-#include "static.h"
 
 ScreenTask7::ScreenTask7(QWidget *parent) : ScreenController(parent), ui(new Ui::ScreenTask7) {
     ui->setupUi(this);
-    init();
 }
 
 ScreenTask7::~ScreenTask7() {
@@ -12,7 +10,7 @@ ScreenTask7::~ScreenTask7() {
 }
 
 void ScreenTask7::init() {
-    switch (rand() % 3) {
+    switch (rnd() % 3) {
     default:
     case 0:
         h1 = "1110011";
@@ -36,6 +34,8 @@ void ScreenTask7::init() {
         h123 = "1010101110010011";
         break;
     }
+    mSeqXOR = Static::getXOR(Static::getMSequence(h1, 10), Static::getMSequence(h3, 10));
+    // setup view
     ui->inputV->addItem("31");
     ui->inputV->addItem("33");
     ui->inputV->addItem("63");
@@ -43,24 +43,36 @@ void ScreenTask7::init() {
     ui->inputV->addItem("65");
     ui->inputV->addItem("66");
     ui->title->setText(ui->title->text().replace("%h1%", h1));
-    ScreenController::store["task7_h1"] = h1;
-    ScreenController::store["task7_h2"] = h2;
-    ScreenController::store["task7_h3"] = h3;
-    ScreenController::store["task7_h123"] = h123;
+    if (readOnly) {
+        ui->inputH3->setReadOnly(true);
+        ui->inputH3->setText(h3);
+        ui->inputHKM->setReadOnly(true);
+        ui->inputHKM->setText(h13);
+        ui->inputFKM->setReadOnly(true);
+        ui->inputFKM->setText(mSeqXOR);
+        ui->inputV->setEnabled(false);
+        ui->inputV->setCurrentText("65");
+    } else {
+        ScreenController::store["task7_h1"] = h1;
+        ScreenController::store["task7_h2"] = h2;
+        ScreenController::store["task7_h3"] = h3;
+        ScreenController::store["task7_h123"] = h123;
+    }
 }
 
 bool ScreenTask7::validate(Core* core, QString* message) {
-    QString mSeq1 = Static::getMSequence(h1, "111111", 10);
-    QString mSeq3 = Static::getMSequence(h3, "111", 10);
+    if (readOnly) {
+        return true;
+    }
     if (ui->inputH3->text() == h3 &&
         ui->inputHKM->text() == h13 &&
-        ui->inputFKM->text() == Static::getXOR(mSeq1, mSeq3) &&
+        ui->inputFKM->text() == mSeqXOR &&
         ui->inputV->currentText() == "65"
     ) {
-        message->append("Ответ верный (+2 балла)");
+        message->append(Static::messageAnswerRight);
         core->changeScore(2);
     } else {
-        message->append("Ответ неверный (-2 балла)");
+        message->append(Static::messageAnswerWrong);
         core->changeScore(-2);
     }
     return true;

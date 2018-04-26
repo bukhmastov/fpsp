@@ -239,6 +239,28 @@ background-color: rgb(235, 235, 235);</string>
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="backButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Назад</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QProgressBar" name="progressBar">
           <property name="value">
            <number>24</number>

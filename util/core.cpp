@@ -1,12 +1,9 @@
-#include "static.h"
 #include "core.h"
-#include "windowcontroller.h"
-#include "task.h"
-#include "screenwelcome.h"
-#include "screenabout.h"
-#include "screendescription.h"
-#include "screenquestion.h"
-#include "screensummary.h"
+#include "screen/screenwelcome.h"
+#include "screen/screenabout.h"
+#include "screen/screendescription.h"
+#include "screen/screenquestion.h"
+#include "screen/screensummary.h"
 #include "task/screentask1.h"
 #include "task/screentask2.h"
 #include "task/screentask3.h"
@@ -45,9 +42,10 @@ void Core::generate(unsigned int seed) {
     // reset progress
     questionsOrder.clear();
     currentTask = 0;
+    showedTask = 0;
     score = Static::scoreInitial;
-    // set seed for random
-    srand(seed);
+    ScreenController::clean();
+    ScreenController::srnd(seed);
     // ------------------------------
     // HERE GOES DEFINITIONS OF QUESTIONS
     // EVERY QUESTION SHOULD BE ADDED TO QUESTIONS VECTOR BELOW
@@ -158,20 +156,21 @@ void Core::next() {
 
 void Core::next(bool force) {
     QString message;
-    if (currentTask == 0 || window->getWidget() == nullptr || window->getWidget()->validate(this, &message)) {
-        if (force || (score >= 0 && currentTask < tasks.size())) {
-            currentTask++;
-            Task *task = tasks.at(currentTask - 1);
-            window->setStep(task->getNumber(), task->getTitle());
-            window->setProgress(currentTask);
-            window->setScore(score);
-            window->setMessage(message);
-            window->setWidget(getView(task->getId()));
-            window->setNextEnabled(task->getNextButtonActive());
+    if (showedTask == 0 || window->getWidget() == nullptr || window->getWidget()->validate(this, &message)) {
+        if (force || (score >= 0 && showedTask < tasks.size())) {
+            showedTask++;
+            show(message);
         } else {
-            currentTask = tasks.size() - 1;
+            showedTask = tasks.size() - 1;
             next(true);
         }
+    }
+}
+
+void Core::back() {
+    if (showedTask > 0) {
+        showedTask--;
+        show("");
     }
 }
 
@@ -186,4 +185,18 @@ void Core::changeScore(int delta) {
 
 int Core::getScore() {
     return score;
+}
+
+void Core::show(QString message) {
+    if (currentTask < showedTask) {
+        currentTask = showedTask;
+    }
+    Task *task = tasks.at(showedTask - 1);
+    window->setStep(task->getNumber(), task->getTitle());
+    window->setProgress(showedTask);
+    window->setScore(score);
+    window->setMessage(message);
+    window->setWidget(getView(task->getId())->init(task->getId(), currentTask != showedTask));
+    window->setNextEnabled(currentTask == showedTask ? task->getNextButtonActive() : true);
+    window->setBackEnabled(showedTask > 1);
 }
