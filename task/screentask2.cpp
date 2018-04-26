@@ -21,14 +21,17 @@ void ScreenTask2::init() {
     x5 = s == 5 ? 1 : s > 4 ? rand() % 2 : -1;
     x6 = s == 6 ? 1 : s > 5 ? rand() % 2 : -1;
     switch (s) {
+    default:
     case 4:
         switch (rand() % 2) {
+        default:
         case 0: a = 1;  polynomC = "0010011"; break;
         case 1: a = 7;  polynomC = "0011001"; break;
         }
         break;
     case 5:
         switch (rand() % 6) {
+        default:
         case 0: a = 1;  polynomC = "0100101"; break;
         case 1: a = 3;  polynomC = "0111101"; break;
         case 2: a = 5;  polynomC = "0110111"; break;
@@ -39,6 +42,7 @@ void ScreenTask2::init() {
         break;
     case 6:
         switch (rand() % 6) {
+        default:
         case 0: a = 1;  polynomC = "1000011"; break;
         case 1: a = 5;  polynomC = "1100111"; break;
         case 2: a = 11; polynomC = "1101101"; break;
@@ -69,6 +73,7 @@ void ScreenTask2::init() {
     ui->titleA->setText(titleA);
 
     switch (s) {
+    default:
     case 4:
         ui->set4->setVisible(true);
         ui->set5->setVisible(false);

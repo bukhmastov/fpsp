@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
         }
     } catch (...) {}
     window.setWindowTitle("Исследование методов формирования псевдослучайных последовательностей");
-    window.setWindowIcon(QIcon(":icons/icon.png"));
+    window.setWindowIcon(QIcon(":icons/icon.ico"));
     window.show();
     return app.exec();
 }

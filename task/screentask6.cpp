@@ -13,6 +13,7 @@ ScreenTask6::~ScreenTask6() {
 
 void ScreenTask6::init() {
     switch (rand() % 5) {
+    default:
     case 0:
         n = 6;
         h1 = "1100001";

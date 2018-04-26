@@ -84,27 +84,27 @@ void Core::generate(unsigned int seed) {
     tasks.push_back(new Task(1,  0,  "Лабораторная работа"));
     tasks.push_back(new Task(2,  0,  "Лабораторная работа"));
     // questions part
-    tasks.push_back(new Task(3,  1,  "Входной контрольный опрос: вопрос 1",  false));
-    tasks.push_back(new Task(4,  1,  "Входной контрольный опрос: вопрос 2",  false));
-    tasks.push_back(new Task(5,  1,  "Входной контрольный опрос: вопрос 3",  false));
-    tasks.push_back(new Task(6,  1,  "Входной контрольный опрос: вопрос 4",  false));
-    tasks.push_back(new Task(7,  1,  "Входной контрольный опрос: вопрос 5",  false));
-    tasks.push_back(new Task(8,  1,  "Входной контрольный опрос: вопрос 6",  false));
-    tasks.push_back(new Task(9,  1,  "Входной контрольный опрос: вопрос 7",  false));
-    tasks.push_back(new Task(10, 1,  "Входной контрольный опрос: вопрос 8",  false));
-    tasks.push_back(new Task(11, 1,  "Входной контрольный опрос: вопрос 9",  false));
-    tasks.push_back(new Task(12, 1,  "Входной контрольный опрос: вопрос 10", false));
+    tasks.push_back(new Task(3,  0,  "Входной контрольный опрос: вопрос 1",  false));
+    tasks.push_back(new Task(4,  0,  "Входной контрольный опрос: вопрос 2",  false));
+    tasks.push_back(new Task(5,  0,  "Входной контрольный опрос: вопрос 3",  false));
+    tasks.push_back(new Task(6,  0,  "Входной контрольный опрос: вопрос 4",  false));
+    tasks.push_back(new Task(7,  0,  "Входной контрольный опрос: вопрос 5",  false));
+    tasks.push_back(new Task(8,  0,  "Входной контрольный опрос: вопрос 6",  false));
+    tasks.push_back(new Task(9,  0,  "Входной контрольный опрос: вопрос 7",  false));
+    tasks.push_back(new Task(10, 0,  "Входной контрольный опрос: вопрос 8",  false));
+    tasks.push_back(new Task(11, 0,  "Входной контрольный опрос: вопрос 9",  false));
+    tasks.push_back(new Task(12, 0,  "Входной контрольный опрос: вопрос 10", false));
     // tasks part
-    tasks.push_back(new Task(13, 2,  "Формирование М-последовательности периода N = 7"));
-    tasks.push_back(new Task(14, 3,  "Формирование М-последовательности периода N = 2^s - 1"));
-    tasks.push_back(new Task(15, 4,  "Формирование последовательностей Баркера"));
-    tasks.push_back(new Task(16, 5,  "Формирование последовательностей Уолша"));
-    tasks.push_back(new Task(17, 6,  "Формирование предпочтительных пар М-последовательностей"));
-    tasks.push_back(new Task(18, 7,  "Формирование последовательностей Голда"));
-    tasks.push_back(new Task(19, 8,  "Формирование последовательностей малого множества Касами"));
-    tasks.push_back(new Task(20, 9,  "Формирование последовательностей большого множества Касами"));
-    tasks.push_back(new Task(21, 10, "Формирование редецимированных последовательностей"));
-    tasks.push_back(new Task(22, 11, "Формирование троичных последовательностей"));
+    tasks.push_back(new Task(13, 1,  "Формирование М-последовательности периода N = 7"));
+    tasks.push_back(new Task(14, 2,  "Формирование М-последовательности периода N = 2^s - 1"));
+    tasks.push_back(new Task(15, 3,  "Формирование последовательностей Баркера"));
+    tasks.push_back(new Task(16, 4,  "Формирование последовательностей Уолша"));
+    tasks.push_back(new Task(17, 5,  "Формирование предпочтительных пар М-последовательностей"));
+    tasks.push_back(new Task(18, 6,  "Формирование последовательностей Голда"));
+    tasks.push_back(new Task(19, 7,  "Формирование последовательностей малого множества Касами"));
+    tasks.push_back(new Task(20, 8,  "Формирование последовательностей большого множества Касами"));
+    tasks.push_back(new Task(21, 9,  "Формирование редецимированных последовательностей"));
+    tasks.push_back(new Task(22, 10, "Формирование троичных последовательностей"));
     // summary part
     tasks.push_back(new Task(99, 0, "Результат", false));
     // ------------------------------
@@ -135,15 +135,15 @@ ScreenController* Core::getView(int id) {
         case 11: return ScreenQuestion::get(this, questions.at(questionsOrder.at(8))); break;
         case 12: return ScreenQuestion::get(this, questions.at(questionsOrder.at(9))); break;
         // tasks part
-        case 13: return new ScreenTask1; break;
-        case 14: return new ScreenTask2; break;
-        case 15: return new ScreenTask3; break;
-        case 16: return new ScreenTask4; break;
-        case 17: return new ScreenTask5; break;
-        case 18: return new ScreenTask6; break;
-        case 19: return new ScreenTask7; break;
-        case 20: return new ScreenTask8; break;
-        case 21: return new ScreenTask9; break;
+        case 13: return new ScreenTask1;  break;
+        case 14: return new ScreenTask2;  break;
+        case 15: return new ScreenTask3;  break;
+        case 16: return new ScreenTask4;  break;
+        case 17: return new ScreenTask5;  break;
+        case 18: return new ScreenTask6;  break;
+        case 19: return new ScreenTask7;  break;
+        case 20: return new ScreenTask8;  break;
+        case 21: return new ScreenTask9;  break;
         case 22: return new ScreenTask10; break;
         // summary part
         case 99: return ScreenSummary::get(this); break;

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>920</width>
     <height>937</height>
    </rect>
   </property>
@@ -478,10 +478,10 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="maximumSize">
+         <property name="minimumSize">
           <size>
-           <width>200</width>
-           <height>16777215</height>
+           <width>240</width>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
@@ -561,14 +561,14 @@
       </spacer>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
         <number>0</number>
        </property>
        <item>
         <layout class="QHBoxLayout" name="s4">
          <item>
-          <spacer name="horizontalSpacer_9">
+          <spacer name="horizontalSpacer_5">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -838,7 +838,7 @@
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_10">
+          <spacer name="horizontalSpacer_6">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -855,7 +855,7 @@
        <item>
         <layout class="QHBoxLayout" name="s5">
          <item>
-          <spacer name="horizontalSpacer_12">
+          <spacer name="horizontalSpacer_8">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -1193,7 +1193,7 @@
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_11">
+          <spacer name="horizontalSpacer_7">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -1210,7 +1210,7 @@
        <item>
         <layout class="QHBoxLayout" name="s6">
          <item>
-          <spacer name="horizontalSpacer_13">
+          <spacer name="horizontalSpacer_9">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -1616,7 +1616,7 @@
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_14">
+          <spacer name="horizontalSpacer_10">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>

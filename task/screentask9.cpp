@@ -14,6 +14,7 @@ ScreenTask9::~ScreenTask9() {
 void ScreenTask9::init() {
     QString ip;
     switch (rand() % 5) {
+    default:
     case 0: ip = "0121-"; break;
     case 1: ip = "1202-"; break;
     case 2: ip = "2010-"; break;

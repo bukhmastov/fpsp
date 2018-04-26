@@ -13,6 +13,7 @@ ScreenTask7::~ScreenTask7() {
 
 void ScreenTask7::init() {
     switch (rand() % 3) {
+    default:
     case 0:
         h1 = "1110011";
         h2 = "1011011";

@@ -15,6 +15,7 @@ void ScreenTask5::init() {
     n = rand() % 2 + 5;
     if (n == 5) {
         switch (rand() % 6) {
+        default:
         case 0: polynom1 = "101001"; polynom2 = "111011"; break; // 1  5
         case 1: polynom1 = "101111"; polynom2 = "100101"; break; // 3  15
         case 2: polynom1 = "111011"; polynom2 = "111101"; break; // 5  7
@@ -25,6 +26,7 @@ void ScreenTask5::init() {
     }
     if (n == 6) {
         switch (rand() % 6) {
+        default:
         case 0: polynom1 = "1100001"; polynom2 = "1110011"; break; // 1  5
         case 1: polynom1 = "1110011"; polynom2 = "1011011"; break; // 5  11
         case 2: polynom1 = "1011011"; polynom2 = "1000011"; break; // 11 31

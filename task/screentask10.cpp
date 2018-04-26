@@ -12,6 +12,7 @@ ScreenTask10::~ScreenTask10() {
 
 void ScreenTask10::init() {
     switch (rand() % 2) {
+    default:
     case 0:
         h = "x<sup>2</sup>+x+2";
         c0 = 1;
@@ -27,7 +28,7 @@ void ScreenTask10::init() {
         c0 = 0;
         c1 = 2;
         f = "02210112";
-        a0 = 0;
+        a0 = 1;
         a1 = 1;
         cA0 = 1;
         cA1 = 1;

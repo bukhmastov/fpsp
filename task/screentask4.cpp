@@ -13,6 +13,7 @@ ScreenTask4::~ScreenTask4() {
 void ScreenTask4::init() {
     int n;
     switch (rand() % 2) {
+    default:
     case 0: n = 8;  h5 = "+1+1+1+1-1-1-1-1"; h8 = "+1-1-1+1-1+1+1-1"; break;
     case 1: n = 16; h5 = "+1+1+1+1-1-1-1-1+1+1+1+1-1-1-1-1"; h8 = "+1+1-1+1-1-1+1-1+1+1-1+1-1-1+1-1"; break;
     }

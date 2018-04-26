@@ -13,6 +13,7 @@ ScreenTask3::~ScreenTask3() {
 void ScreenTask3::init() {
     int n;
     switch (rand() % 6) {
+    default:
     case 0: n = 3;  sequence = "+1+1-1"; break;
     case 1: n = 4;  sequence = "+1+1-1+1"; break;
     case 2: n = 5;  sequence = "+1+1+1–1+1"; break;

@@ -23,6 +23,7 @@ void ScreenTask8::init() {
         h123 = ScreenController::store.at("task7_h123");
     } else {
         switch (rand() % 3) {
+        default:
         case 0:
             h1 = "1110011";
             h2 = "1011011";

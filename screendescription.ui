@@ -95,7 +95,7 @@
         <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Набор заданий состоит из 15 задач и подзадач. Каждая задача/подзадача также добавляет или отнимает 2 балла.</string>
+        <string>Набор задач состоит из 15 заданий и подзаданий. Каждое задание/подзадание добавляет или отнимает 2 балла.</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
