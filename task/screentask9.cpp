@@ -44,6 +44,7 @@ void ScreenTask9::init() {
     for (unsigned int i = 0; i < ir.size(); i++) {
         sequence.append(QString::number(ir.at(i)));
     }
+    ui->titleIp->setText(ui->titleIp->text().replace("%ip%", ip));
 }
 
 bool ScreenTask9::validate(Core* core, QString* message) {

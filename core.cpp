@@ -16,6 +16,7 @@
 #include "task/screentask7.h"
 #include "task/screentask8.h"
 #include "task/screentask9.h"
+#include "task/screentask10.h"
 #include <iostream>
 #include <time.h>
 #include <algorithm>
@@ -63,9 +64,9 @@ void Core::generate(unsigned int seed) {
     questions.push_back(new Question("Определить степень проверочного полинома для последовательностей малого множества Касами периода N = 255", std::vector<QString>{"12", "8", "20", "24", "16"}));
     questions.push_back(new Question("Определить степень проверочного полинома для последовательностей большого множества Касами периода N = 1023", std::vector<QString>{"25", "15", "20", "30", "10"}));
     // ------------------------------
-    unsigned int size = 10;
+    unsigned int size = questions.size() < 10 ? questions.size() : 10;
     while (true) {
-        int current = rand() % size;
+        int current = rand() % questions.size();
         if (!(std::find(questionsOrder.begin(), questionsOrder.end(), current) != questionsOrder.end())) {
             questionsOrder.push_back(current);
         }
@@ -103,7 +104,7 @@ void Core::generate(unsigned int seed) {
     tasks.push_back(new Task(19, 8,  "Формирование последовательностей малого множества Касами"));
     tasks.push_back(new Task(20, 9,  "Формирование последовательностей большого множества Касами"));
     tasks.push_back(new Task(21, 10, "Формирование редецимированных последовательностей"));
-
+    tasks.push_back(new Task(22, 11, "Формирование троичных последовательностей"));
     // summary part
     tasks.push_back(new Task(99, 0, "Результат", false));
     // ------------------------------
@@ -143,7 +144,7 @@ ScreenController* Core::getView(int id) {
         case 19: return new ScreenTask7; break;
         case 20: return new ScreenTask8; break;
         case 21: return new ScreenTask9; break;
-
+        case 22: return new ScreenTask10; break;
         // summary part
         case 99: return ScreenSummary::get(this); break;
         default: return NULL;

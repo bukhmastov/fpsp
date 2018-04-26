@@ -9,5 +9,6 @@
         <file>circuit-template(s=4).png</file>
         <file>circuit-template(s=5).png</file>
         <file>circuit-template(s=6).png</file>
+        <file>circuit-template(s=2).png</file>
     </qresource>
 </RCC>
