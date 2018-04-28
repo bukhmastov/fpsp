@@ -30,20 +30,21 @@ void Core::generate() {
 
 void Core::generate(unsigned int seed) {
     // clear questions
-    for (Question* question : questions) {
+    for (Question* question : this->questions) {
         delete question;
     }
-    questions.clear();
+    this->questions.clear();
     // clear tasks
-    for (Task* task : tasks) {
+    for (Task* task : this->tasks) {
         delete task;
     }
-    tasks.clear();
+    this->tasks.clear();
     // reset progress
-    questionsOrder.clear();
-    currentTask = 0;
-    showedTask = 0;
-    score = Static::scoreInitial;
+    this->questionsOrder.clear();
+    this->currentTask = 0;
+    this->showedTask = 0;
+    this->score = Static::scoreInitial;
+    this->seed = seed;
     ScreenController::clean();
     ScreenController::srnd(seed);
     // ------------------------------
@@ -224,4 +225,8 @@ void Core::show(QString message) {
     window->setWidget(getView(task->getId())->init(task->getId(), currentTask != showedTask));
     window->setNextEnabled(currentTask == showedTask ? task->getNextButtonActive() : true);
     window->setBackEnabled(showedTask > 1);
+}
+
+unsigned int Core::getSeed() {
+    return seed;
 }

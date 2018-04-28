@@ -19,6 +19,7 @@ public:
     void reset();
     void changeScore(int);
     int getScore();
+    unsigned int getSeed();
 
 private:
     ScreenController* getView(int);
@@ -33,6 +34,7 @@ private:
     unsigned int showedTask = 0;
     unsigned int currentTask = 0;
     int score = 50;
+    unsigned int seed = 0;
 };
 
 #endif // CORE_H

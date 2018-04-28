@@ -239,6 +239,25 @@ background-color: rgb(235, 235, 235);</string>
          </widget>
         </item>
         <item>
+         <widget class="QProgressBar" name="progressBar">
+          <property name="value">
+           <number>24</number>
+          </property>
+          <property name="textVisible">
+           <bool>false</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="textDirection">
+           <enum>QProgressBar::TopToBottom</enum>
+          </property>
+          <property name="format">
+           <string>%p%</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="backButton">
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
@@ -257,25 +276,6 @@ background-color: rgb(235, 235, 235);</string>
           </property>
           <property name="flat">
            <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QProgressBar" name="progressBar">
-          <property name="value">
-           <number>24</number>
-          </property>
-          <property name="textVisible">
-           <bool>false</bool>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="textDirection">
-           <enum>QProgressBar::TopToBottom</enum>
-          </property>
-          <property name="format">
-           <string>%p%</string>
           </property>
          </widget>
         </item>
