@@ -13,25 +13,25 @@ void ScreenTask7::init() {
     switch (rnd() % 3) {
     default:
     case 0:
-        h1 = "1110011";
-        h2 = "1011011";
-        h3 = "1101";
-        h13 = "1000100111";
-        h123 = "1011110011100001";
+        h1 = "1100111";
+        h2 = "1101101";
+        h3 = "1011";
+        h13 = "1110010001";
+        h123 = "1000011100111101";
         break;
     case 1:
-        h1 = "1011011";
-        h2 = "1000011";
-        h3 = "1101";
-        h13 = "1111101111";
-        h123 = "1111111111110001";
+        h1 = "1101101";
+        h2 = "1100001";
+        h3 = "1011";
+        h13 = "1111011111";
+        h123 = "1000111111111111";
         break;
     case 2:
-        h1 = "1000011";
-        h2 = "1101101";
+        h1 = "1100001";
+        h2 = "1011011";
         h3 = "1101";
-        h13 = "1101010111";
-        h123 = "1010101110010011";
+        h13 = "1110101011";
+        h123 = "1100100111010101";
         break;
     }
     mSeqXOR = Static::getXOR(Static::getMSequence(h1, 10), Static::getMSequence(h3, 10));
@@ -42,7 +42,7 @@ void ScreenTask7::init() {
     ui->inputV->addItem("64");
     ui->inputV->addItem("65");
     ui->inputV->addItem("66");
-    ui->title->setText(ui->title->text().replace("%h1%", h1));
+    ui->title->setText(ui->title->text().replace("%h1%", Static::getReadablePolynom(h1)));
     if (readOnly) {
         ui->inputH3->setReadOnly(true);
         ui->inputH3->setText(h3);
@@ -53,7 +53,7 @@ void ScreenTask7::init() {
         ui->inputV->setEnabled(false);
         ui->inputV->setCurrentText("65");
     } else {
-        ScreenController::store["task7_h1"] = h1;
+        ScreenController::store["task7_seed"] = h1;
         ScreenController::store["task7_h2"] = h2;
         ScreenController::store["task7_h3"] = h3;
         ScreenController::store["task7_h123"] = h123;

@@ -16,15 +16,15 @@ QString Static::getMSequence(/* polynom x^3+x+1 = 1011 */QString poly, int n) {
     return getMSequence(poly, args, n);
 }
 
-QString Static::getMSequence(/* polynom x^3+x+1 = 1011 */QString poly, QString args, int n) {
+QString Static::getMSequence(/* polynom 1+x+x^3 = 1101 */QString poly, QString args, int n) {
     QString mSeg;
     mSeg.reserve(n);
     mSeg.append(args);
-    poly = poly.mid(1);
+    poly.chop(1);
     for (int i = args.size(); i < n; i++) {
         int sum = 0;
         for (int j = 0; j < args.size(); j++) {
-            if ((poly.at(j) == QChar('1')) && (mSeg.at(i - j - 1) == QChar('1'))) {
+            if ((poly.at(args.size() - j - 1) == QChar('1')) && (mSeg.at(i - j - 1) == QChar('1'))) {
                 sum++;
             }
         }
@@ -40,4 +40,27 @@ QString Static::getXOR(QString p1, QString p2) {
         p12.append(p1.at(i) == p2.at(i) ? "0" : "1");
     }
     return p12;
+}
+
+
+QString Static::getReadablePolynom(QString poly) {
+    QString readable = "";
+    int size = poly.size();
+    for (int i = size - 1; i >= 0; i--) {
+        if (poly.at(i) == QChar('1')) {
+            if (!readable.isEmpty()) {
+                readable += "+";
+            }
+            if (i == 0) {
+                readable += "1";
+            }
+            if (i == 1) {
+                readable += "x";
+            }
+            if (i > 1) {
+                readable += "x<sup>" + QString::number(i) + "</sup>";
+            }
+        }
+    }
+    return readable;
 }

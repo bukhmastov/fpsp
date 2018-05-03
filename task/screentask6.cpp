@@ -14,37 +14,37 @@ void ScreenTask6::init() {
     default:
     case 0:
         n = 6;
-        h1 = "1100001";
-        h2 = "1101101";
-        h12 = "1011010001101";
+        h1 = "1000011";
+        h2 = "1011011";
+        h12 = "1011000101101";
         v = "65";
         break;
     case 1:
-        n = 6;
-        h1 = "1110011";
-        h2 = "1011011";
-        h12 = "1100011111101";
-        v = "65";
-        break;
-    case 2:
         n = 6;
         h1 = "1100111";
         h2 = "1101101";
         h12 = "1011111100011";
         v = "65";
         break;
+    case 2:
+        n = 6;
+        h1 = "1110011";
+        h2 = "1011011";
+        h12 = "1100011111101";
+        v = "65";
+        break;
     case 3:
         n = 5;
-        h1 = "100101";
-        h2 = "110111";
-        h12 = "11000001011";
+        h1 = "101001";
+        h2 = "111011";
+        h12 = "11010000011";
         v = "33";
         break;
     case 4:
         n = 5;
-        h1 = "101111";
-        h2 = "100101";
-        h12 = "10101110011";
+        h1 = "111101";
+        h2 = "101001";
+        h12 = "11001110101";
         v = "33";
         break;
     }
@@ -56,8 +56,8 @@ void ScreenTask6::init() {
     ui->inputV->addItem("63");
     ui->inputV->addItem("64");
     ui->inputV->addItem("65");
-    ui->titleH1->setText("h1(x) = " + h1);
-    ui->titleH2->setText("h2(x) = " + h2);
+    ui->titleH1->setText("h1(x) = " + Static::getReadablePolynom(h1));
+    ui->titleH2->setText("h2(x) = " + Static::getReadablePolynom(h2));
     if (readOnly) {
         ui->inputHX->setReadOnly(true);
         ui->inputHX->setText(h12);

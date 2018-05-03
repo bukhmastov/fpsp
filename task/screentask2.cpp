@@ -23,30 +23,30 @@ void ScreenTask2::init() {
     case 4:
         switch (rnd() % 2) {
         default:
-        case 0: a = 1;  polynomC = "0010011"; break;
-        case 1: a = 7;  polynomC = "0011001"; break;
+        case 0: a = 1;  polynomC = "1100100"; break;
+        case 1: a = 7;  polynomC = "1001100"; break;
         }
         break;
     case 5:
         switch (rnd() % 6) {
         default:
-        case 0: a = 1;  polynomC = "0100101"; break;
-        case 1: a = 3;  polynomC = "0111101"; break;
-        case 2: a = 5;  polynomC = "0110111"; break;
-        case 3: a = 7;  polynomC = "0101111"; break;
-        case 4: a = 11; polynomC = "0111011"; break;
-        case 5: a = 15; polynomC = "0101001"; break;
+        case 0: a = 1;  polynomC = "1010010"; break;
+        case 1: a = 3;  polynomC = "1011110"; break;
+        case 2: a = 5;  polynomC = "1110110"; break;
+        case 3: a = 7;  polynomC = "1111010"; break;
+        case 4: a = 11; polynomC = "1101110"; break;
+        case 5: a = 15; polynomC = "1001010"; break;
         }
         break;
     case 6:
         switch (rnd() % 6) {
         default:
-        case 0: a = 1;  polynomC = "1000011"; break;
-        case 1: a = 5;  polynomC = "1100111"; break;
-        case 2: a = 11; polynomC = "1101101"; break;
-        case 3: a = 13; polynomC = "1011011"; break;
-        case 4: a = 23; polynomC = "1110011"; break;
-        case 5: a = 31; polynomC = "1100001"; break;
+        case 0: a = 1;  polynomC = "1100001"; break;
+        case 1: a = 5;  polynomC = "1110011"; break;
+        case 2: a = 11; polynomC = "1011011"; break;
+        case 3: a = 13; polynomC = "1101101"; break;
+        case 4: a = 23; polynomC = "1100111"; break;
+        case 5: a = 31; polynomC = "1000011"; break;
         }
         break;
     }
@@ -55,14 +55,6 @@ void ScreenTask2::init() {
     relayH3 = true;
     relayH4 = true;
     relayH5 = true;
-    QString polynom;
-    polynom.append(x6 == -1 ? "" : QString::number(x6));
-    polynom.append(x5 == -1 ? "" : QString::number(x5));
-    polynom.append(QString::number(x4));
-    polynom.append(QString::number(x3));
-    polynom.append(QString::number(x2));
-    polynom.append(QString::number(x1));
-    polynom.append(QString::number(x0));
     mSeq = Static::getMSequence(polynomC, 15);
     // setup view
     QString title = ui->title->text();

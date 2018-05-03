@@ -23,22 +23,22 @@ void ScreenTask8::init() {
         switch (rnd() % 3) {
         default:
         case 0:
-            h1 = "1110011";
-            h2 = "1011011";
-            h3 = "1101";
-            h123 = "1011110011100001";
+            h1 = "1100111";
+            h2 = "1101101";
+            h3 = "1011";
+            h123 = "1000011100111101";
             break;
         case 1:
-            h1 = "1011011";
-            h2 = "1000011";
-            h3 = "1101";
-            h123 = "1111111111110001";
+            h1 = "1101101";
+            h2 = "1100001";
+            h3 = "1011";
+            h123 = "1000111111111111";
             break;
         case 2:
-            h1 = "1000011";
-            h2 = "1101101";
-            h3 = "1101";
-            h123 = "1010101110010011";
+            h1 = "1100001";
+            h2 = "1011011";
+            h3 = "1011";
+            h123 = "1100100111010101";
             break;
         }
     }
@@ -51,7 +51,7 @@ void ScreenTask8::init() {
     ui->inputV->addItem("520");
     ui->inputV->addItem("513");
     ui->inputV->addItem("521");
-    ui->title->setText(ui->title->text().replace("%h1%", h1));
+    ui->title->setText(ui->title->text().replace("%h1%", Static::getReadablePolynom(h1)));
     if (readOnly) {
         ui->inputH2->setReadOnly(true);
         ui->inputH2->setText(h2);

@@ -24,7 +24,7 @@ void ScreenTask4::init() {
         h8 = "+1+1-1+1-1-1+1-1+1+1-1+1-1-1+1-1";
         break;
     }
-    ui->titleA->setText(ui->titleA->text().replace("%n%", QString::number(n)));
+    ui->titleB->setText(ui->titleB->text().replace("%n%", QString::number(n)));
     if (readOnly) {
         ui->inputH5->setReadOnly(true);
         ui->inputH5->setText(h5);

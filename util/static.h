@@ -13,6 +13,7 @@ public:
     static QString getMSequence(QString, int);
     static QString getMSequence(QString, QString, int);
     static QString getXOR(QString, QString);
+    static QString getReadablePolynom(QString);
 };
 
 #endif // STATIC_H

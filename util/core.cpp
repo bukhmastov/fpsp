@@ -104,20 +104,20 @@ void Core::generate(unsigned int seed) {
     // TASK'S VIEWS DEFINES AT Core::getView(int id)
     // ------------------------------
     // intro part
-    tasks.push_back(new Task(0,  0,  "Лабораторная работа"));
-    tasks.push_back(new Task(1,  0,  "Лабораторная работа"));
-    tasks.push_back(new Task(2,  0,  "Лабораторная работа"));
+    tasks.push_back(new Task(0,  0,  "Практическое занятие"));
+    tasks.push_back(new Task(1,  0,  "Практическое занятие"));
+    tasks.push_back(new Task(2,  0,  "Практическое занятие"));
     // questions part
-    tasks.push_back(new Task(3,  0,  "Входной контрольный опрос: вопрос 1",  false));
-    tasks.push_back(new Task(4,  0,  "Входной контрольный опрос: вопрос 2",  false));
-    tasks.push_back(new Task(5,  0,  "Входной контрольный опрос: вопрос 3",  false));
-    tasks.push_back(new Task(6,  0,  "Входной контрольный опрос: вопрос 4",  false));
-    tasks.push_back(new Task(7,  0,  "Входной контрольный опрос: вопрос 5",  false));
-    tasks.push_back(new Task(8,  0,  "Входной контрольный опрос: вопрос 6",  false));
-    tasks.push_back(new Task(9,  0,  "Входной контрольный опрос: вопрос 7",  false));
-    tasks.push_back(new Task(10, 0,  "Входной контрольный опрос: вопрос 8",  false));
-    tasks.push_back(new Task(11, 0,  "Входной контрольный опрос: вопрос 9",  false));
-    tasks.push_back(new Task(12, 0,  "Входной контрольный опрос: вопрос 10", false));
+    tasks.push_back(new Task(3,  1,  "Входной контрольный опрос: вопрос 1",  false));
+    tasks.push_back(new Task(4,  2,  "Входной контрольный опрос: вопрос 2",  false));
+    tasks.push_back(new Task(5,  3,  "Входной контрольный опрос: вопрос 3",  false));
+    tasks.push_back(new Task(6,  4,  "Входной контрольный опрос: вопрос 4",  false));
+    tasks.push_back(new Task(7,  5,  "Входной контрольный опрос: вопрос 5",  false));
+    tasks.push_back(new Task(8,  6,  "Входной контрольный опрос: вопрос 6",  false));
+    tasks.push_back(new Task(9,  7,  "Входной контрольный опрос: вопрос 7",  false));
+    tasks.push_back(new Task(10, 8,  "Входной контрольный опрос: вопрос 8",  false));
+    tasks.push_back(new Task(11, 9,  "Входной контрольный опрос: вопрос 9",  false));
+    tasks.push_back(new Task(12, 10, "Входной контрольный опрос: вопрос 10", false));
     // tasks part
     tasks.push_back(new Task(13, 1,  "Формирование М-последовательности периода N = 7"));
     tasks.push_back(new Task(14, 2,  "Формирование М-последовательности периода N = 2^s - 1"));

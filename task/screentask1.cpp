@@ -24,7 +24,7 @@ void ScreenTask1::init() {
     relayH1 = false;
     relayH2 = false;
     // get m sequence
-    mSeg = Static::getMSequence(QString::number(x3) + QString::number(x2) + QString::number(x1) + QString::number(x0), QString::number(c0) + QString::number(c1) + QString::number(c2), 7);
+    mSeg = Static::getMSequence(QString::number(x0) + QString::number(x1) + QString::number(x2) + QString::number(x3), QString::number(c0) + QString::number(c1) + QString::number(c2), 7);
     // setup view
     QString titleA = ui->titleA->text();
     QString titleB = ui->titleB->text();
