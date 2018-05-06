@@ -119,8 +119,8 @@ void Core::generate(unsigned int seed) {
     tasks.push_back(new Task(11, 9,  "Входной контрольный опрос: вопрос 9",  false));
     tasks.push_back(new Task(12, 10, "Входной контрольный опрос: вопрос 10", false));
     // tasks part
-    tasks.push_back(new Task(13, 1,  "Формирование М-последовательности периода N = 7"));
-    tasks.push_back(new Task(14, 2,  "Формирование М-последовательности периода N = 2^s - 1"));
+    tasks.push_back(new Task(13, 1,  "Формирование М-последовательности с периодом N = 7"));
+    tasks.push_back(new Task(14, 2,  "Формирование М-последовательности с периодом N = 2^s - 1"));
     tasks.push_back(new Task(15, 3,  "Формирование последовательностей Баркера"));
     tasks.push_back(new Task(16, 4,  "Формирование последовательностей Уолша"));
     tasks.push_back(new Task(17, 5,  "Формирование предпочтительных пар М-последовательностей"));

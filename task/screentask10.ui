@@ -47,7 +47,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Составить уравнение для символов троичной М - последовательности периода N=8, если h(x)=%h%</string>
+        <string>Составить уравнение для символов троичной М - последовательности с периодом N=8, если h(x)=%h%</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
