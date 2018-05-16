@@ -313,7 +313,7 @@ background-color: transparent;</string>
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Результат прохождения лабораторной работы</string>
+        <string>Результат прохождения практического занятия</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
