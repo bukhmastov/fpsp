@@ -323,7 +323,7 @@
           <set>Qt::AlignCenter</set>
          </property>
          <property name="placeholderText">
-          <string>CN ... C0</string>
+          <string>C0 ... CN</string>
          </property>
         </widget>
        </item>

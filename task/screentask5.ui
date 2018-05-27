@@ -124,7 +124,7 @@
           <set>Qt::AlignCenter</set>
          </property>
          <property name="placeholderText">
-          <string>xN ... x0</string>
+          <string>x0 ... xN</string>
          </property>
         </widget>
        </item>
@@ -194,7 +194,7 @@
           <set>Qt::AlignCenter</set>
          </property>
          <property name="placeholderText">
-          <string>CN ... C0</string>
+          <string>C0 ... CN</string>
          </property>
         </widget>
        </item>
