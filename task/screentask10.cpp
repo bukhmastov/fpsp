@@ -13,7 +13,7 @@ void ScreenTask10::init() {
     switch (rnd() % 2) {
     default:
     case 0:
-        h = "x<sup>2</sup>+x+2";
+        h = "2+x+x<sup>2</sup>";
         c0 = 1;
         c1 = 0;
         f = "10122021";
@@ -23,7 +23,7 @@ void ScreenTask10::init() {
         cA1 = 2;
         break;
     case 2:
-        h = "x<sup>2</sup>+2x+2";
+        h = "2+2x+x<sup>2</sup>";
         c0 = 0;
         c1 = 2;
         f = "02210112";

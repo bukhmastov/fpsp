@@ -28,10 +28,10 @@ void ScreenTask1::init() {
     // setup view
     QString titleA = ui->titleA->text();
     QString titleB = ui->titleB->text();
-    QString titleAH = "x<sup>3</sup>";
-    titleAH.append(x2 == 1 ? "+x<sup>2</sup>" : "");
+    QString titleAH = "1";
     titleAH.append(x1 == 1 ? "+x" : "");
-    titleAH.append("+1");
+    titleAH.append(x2 == 1 ? "+x<sup>2</sup>" : "");
+    titleAH.append("+x<sup>3</sup>");
     titleA = titleA.replace("%h%", titleAH);
     titleB = titleB.replace("%c0%", QString::number(c0));
     titleB = titleB.replace("%c1%", QString::number(c1));
