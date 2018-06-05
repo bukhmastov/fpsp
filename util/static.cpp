@@ -42,7 +42,6 @@ QString Static::getXOR(QString p1, QString p2) {
     return p12;
 }
 
-
 QString Static::getReadablePolynom(QString poly) {
     QString readable = "";
     int size = poly.size();
@@ -63,4 +62,21 @@ QString Static::getReadablePolynom(QString poly) {
         }
     }
     return readable;
+}
+
+QString Static::multiplyPolynoms(QString p1, QString p2, int n) {
+    QString p12;
+    std::vector<int> p12v;
+    for (int i = 0; i < p1.size() + p2.size() - 1; i++) {
+        p12v.push_back(0);
+    }
+    for (int i = 0; i < p1.size(); i++) {
+        for (int j = 0; j < p2.size(); j++) {
+            p12v.at(i + j) += QString(p1.at(i)).toInt() * QString(p2.at(j)).toInt();
+        }
+    }
+    for (unsigned int i = 0; i < p12v.size(); i++) {
+        p12.append(QString::number(p12v.at(i) % n));
+    }
+    return p12;
 }

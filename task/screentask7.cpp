@@ -10,30 +10,16 @@ ScreenTask7::~ScreenTask7() {
 }
 
 void ScreenTask7::init() {
-    switch (rnd() % 3) {
+    switch (rnd() % 6) {
     default:
-    case 0:
-        h1 = "1100111";
-        h2 = "1101101";
-        h3 = "1011";
-        h13 = "1110010001";
-        h123 = "1000011100111101";
-        break;
-    case 1:
-        h1 = "1101101";
-        h2 = "1100001";
-        h3 = "1011";
-        h13 = "1111011111";
-        h123 = "1000111111111111";
-        break;
-    case 2:
-        h1 = "1100001";
-        h2 = "1011011";
-        h3 = "1101";
-        h13 = "1110101011";
-        h123 = "1100100111010101";
-        break;
+    case 0: h1 = "1000011"; h2 = "1100111"; h3 = "1011"; break; // 1  5  9
+    case 1: h1 = "1100111"; h2 = "1101101"; h3 = "1101"; break; // 5  11 27
+    case 2: h1 = "1101101"; h2 = "1100001"; h3 = "1011"; break; // 11 31 36
+    case 3: h1 = "1011011"; h2 = "1000011"; h3 = "1101"; break; // 13 1  54
+    case 4: h1 = "1110011"; h2 = "1011011"; h3 = "1011"; break; // 23 13 18
+    case 5: h1 = "1100001"; h2 = "1110011"; h3 = "1101"; break; // 31 23 27
     }
+    h13 = Static::multiplyPolynoms(h1, h3, 2);
     mSeqXOR = Static::getXOR(Static::getMSequence(h1, 10), Static::getMSequence(h3, 10));
     // setup view
     ui->inputV->addItem("31");
@@ -53,10 +39,9 @@ void ScreenTask7::init() {
         ui->inputV->setEnabled(false);
         ui->inputV->setCurrentText("65");
     } else {
-        ScreenController::store["task7_seed"] = h1;
+        ScreenController::store["task7_h1"] = h1;
         ScreenController::store["task7_h2"] = h2;
         ScreenController::store["task7_h3"] = h3;
-        ScreenController::store["task7_h123"] = h123;
     }
 }
 

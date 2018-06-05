@@ -24,10 +24,10 @@ protected:
 private:
     Ui::ScreenTask6 *ui;
     int n;
+    QString v;
     QString h1;
     QString h2;
     QString h12;
-    QString v;
     QString mSeqXOR;
 };
 

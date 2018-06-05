@@ -14,6 +14,7 @@ public:
     static QString getMSequence(QString, QString, int);
     static QString getXOR(QString, QString);
     static QString getReadablePolynom(QString);
+    static QString multiplyPolynoms(QString, QString, int);
 };
 
 #endif // STATIC_H

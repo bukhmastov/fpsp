@@ -24,8 +24,10 @@ protected:
 private:
     Ui::ScreenTask5 *ui;
     int n;
-    QString polynom1;
-    QString polynom2;
+    QString v;
+    QString h1;
+    QString h2;
+    QString h3;
     QString mSeq;
 };
 
