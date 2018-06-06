@@ -25,15 +25,17 @@ private:
     void onRelayClicked(int h);
     Ui::ScreenTask2 *ui;
     int s;
-    int x0;
+    /*int x0;
     int x1;
     int x2;
     int x3;
     int x4;
     int x5;
-    int x6;
+    int x6;*/
+    QString h1;
+    QString h2;
     int a;
-    QString polynomC;
+    //QString polynomC;
     bool relayH1 = false;
     bool relayH2 = false;
     bool relayH3 = false;
