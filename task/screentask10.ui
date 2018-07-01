@@ -238,7 +238,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>375</width>
+           <width>400</width>
            <height>0</height>
           </size>
          </property>
@@ -292,7 +292,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Ввести обратные связи в регистре сдвига с соответствующими коэффициентами усиления</string>
+        <string>Ввести обратные связи в регистре сдвига с соответствующими коэффициентами умножения</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

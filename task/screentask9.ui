@@ -47,8 +47,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Над полем GF(2&lt;sup&gt;4&lt;/sup&gt;), pi(x) = 1+x+x&lt;sup&gt;4&lt;/sup&gt;, a = x = 0010, сформировать редицимированную последовательность (РП) составного с периодом N = 15 на основе характеристической последовательности (ХП) с периодом J = 3, используя правило формирования (ПФ) 
-</string>
+        <string>Над полем GF(2&lt;sup&gt;4&lt;/sup&gt;), pi(x) = 1+x+x&lt;sup&gt;4&lt;/sup&gt;, a = x = 0010, сформировать редицимированную последовательность (РП) с оставным периодом N = 15 на основе известной характеристической последовательности (ХП) с периодом J = 3, используя правило формирования (ПФ)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -141,7 +140,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>375</width>
+           <width>400</width>
            <height>0</height>
           </size>
          </property>

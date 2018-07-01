@@ -47,7 +47,7 @@
         <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Задан проверочный полином h1(x)=%h1%, S=6, формирующий МП с периодом N=63. Определить проверочный полином h3(x), для которого S=3, и получить hkm(x)=h1(x)*h3(x), соответствующий последовательности малого множества Касами. Сформировать первые 10 символов последовательности для h1(x) и h3(x) путем суммирования по модулю 2 (XOR) соответствующих последовательностей. Определить объем последовательностей малого множества Касами.</string>
+        <string>Задан проверочный полином h1(x)=%h1%, S=6, формирующий МП с периодом N=63. Определить проверочный полином h3(x), для которого S=3, и получить hkm(x)=h1(x)*h3(x), соответствующий последовательности малого множества Касами. Сформировать первые 10 символов данной последовательности для hkm(x) путем суммирования по модулю 2 (XOR) последовательностей с полиномами h1(x) и h3(x) для единичных исходных символов. Определить объем последовательностей малого множества Касами.</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -108,7 +108,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>375</width>
+           <width>400</width>
            <height>0</height>
           </size>
          </property>
@@ -178,7 +178,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>360</width>
+           <width>382</width>
            <height>0</height>
           </size>
          </property>
@@ -248,7 +248,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>385</width>
+           <width>405</width>
            <height>0</height>
           </size>
          </property>
