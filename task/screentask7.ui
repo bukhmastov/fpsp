@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>832</width>
-    <height>431</height>
+    <width>849</width>
+    <height>638</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
      <item>
       <widget class="QLabel" name="title">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Задан проверочный полином h1(x)=%h1%, S=6, формирующий МП с периодом N=63. Определить проверочный полином h3(x), для которого S=3, и получить hkm(x)=h1(x)*h3(x), соответствующий последовательности малого множества Касами. Сформировать первые 10 символов данной последовательности для hkm(x) путем суммирования по модулю 2 (XOR) последовательностей с полиномами h1(x) и h3(x) для единичных исходных символов. Определить объем последовательностей малого множества Касами.</string>
@@ -91,7 +91,7 @@
        <item>
         <widget class="QLabel" name="label_10">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>h3(x) =</string>
@@ -114,8 +114,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="maxLength">
           <number>4</number>
@@ -161,7 +168,7 @@
        <item>
         <widget class="QLabel" name="label_11">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>hkm(x) =</string>
@@ -184,8 +191,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="maxLength">
           <number>10</number>
@@ -231,7 +245,7 @@
        <item>
         <widget class="QLabel" name="label_13">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>FKM =</string>
@@ -254,8 +268,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="maxLength">
           <number>10</number>
@@ -301,7 +322,7 @@
        <item>
         <widget class="QLabel" name="label_12">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>V =</string>
@@ -324,8 +345,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
         </widget>
        </item>

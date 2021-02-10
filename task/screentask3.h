@@ -23,7 +23,7 @@ protected:
 
 private:
     Ui::ScreenTask3 *ui;
-    QString sequence;
+    std::vector<QString> sequence;
 };
 
 #endif // SCREENTASK3_H

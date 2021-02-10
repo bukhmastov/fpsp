@@ -44,7 +44,7 @@
      <item>
       <widget class="QLabel" name="title">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Для полиномов h1(x), h2(x) из задания №5, соответствующих предпочтительной паре М-последовательностей, получить проверочный полином для последовательностей Голда. Сформировать первые 15 символов для одной из последовательностей Голда, сложив по модулю 2 (XOR) первые 15 символов М-последовательностей F1(x) и F2(x) (с единичными исходными символами). Определить объем множества последовательностей Голда. </string>
@@ -139,7 +139,7 @@
        <item>
         <widget class="QLabel" name="label_10">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>hg(x) =</string>
@@ -162,8 +162,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="maxLength">
           <number>13</number>
@@ -209,7 +216,7 @@
        <item>
         <widget class="QLabel" name="label_11">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>FG =</string>
@@ -232,8 +239,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="maxLength">
           <number>15</number>
@@ -279,7 +293,7 @@
        <item>
         <widget class="QLabel" name="label_12">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>V =</string>
@@ -302,8 +316,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
         </widget>
        </item>

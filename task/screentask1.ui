@@ -44,7 +44,7 @@
      <item>
       <widget class="QLabel" name="titleA">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>A) Составить уравнение для символов М-последовательности, если h(x)=%h%</string>
@@ -91,7 +91,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>C&lt;sub&gt;3+i&lt;/sub&gt; =</string>
@@ -114,8 +114,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -128,7 +135,7 @@
        <item>
         <widget class="QLabel" name="label_3">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>C&lt;sub&gt;0+i&lt;/sub&gt; +</string>
@@ -151,8 +158,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -165,7 +179,7 @@
        <item>
         <widget class="QLabel" name="label_4">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>C&lt;sub&gt;1+i&lt;/sub&gt; +</string>
@@ -188,8 +202,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -202,7 +223,7 @@
        <item>
         <widget class="QLabel" name="label_5">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>C&lt;sub&gt;2+i&lt;/sub&gt;</string>
@@ -243,7 +264,7 @@
      <item>
       <widget class="QLabel" name="titleB">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Б) Для исходных символов C&lt;sub&gt;0&lt;/sub&gt;=%c0%, C&lt;sub&gt;1&lt;/sub&gt;=%c1%, C&lt;sub&gt;2&lt;/sub&gt;=%c2% сформировать М-последовательность F</string>
@@ -290,7 +311,7 @@
        <item>
         <widget class="QLabel" name="label_6">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>F =</string>
@@ -313,8 +334,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="maxLength">
           <number>7</number>
@@ -361,7 +389,7 @@
      <item>
       <widget class="QLabel" name="title_3">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>В) Ввести обратные связи в регистре сдвига для заданного проверочного полинома h(x) и установить начальные состояния ячеек регистра</string>
@@ -482,7 +510,7 @@
           </property>
           <property name="font">
            <font>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
            </font>
           </property>
           <property name="alignment">
@@ -515,7 +543,7 @@
           </property>
           <property name="font">
            <font>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
            </font>
           </property>
           <property name="alignment">
@@ -548,7 +576,7 @@
           </property>
           <property name="font">
            <font>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
            </font>
           </property>
           <property name="alignment">

@@ -47,7 +47,7 @@
      <item>
       <widget class="QLabel" name="title">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Над полем GF(2&lt;sup&gt;%gf%&lt;/sup&gt;), pi(x)=%pi%, a=x</string>
@@ -79,7 +79,7 @@
      <item>
       <widget class="QLabel" name="titleA">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>А) Ввести коэффициенты проверочного полинома h(x), корнем которого является элемент a&lt;sup&gt;%a%&lt;/sup&gt;</string>
@@ -125,6 +125,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -149,7 +158,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="alignment">
@@ -162,6 +171,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_10">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -186,7 +204,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="alignment">
@@ -199,6 +217,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_8">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -223,7 +250,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="alignment">
@@ -236,6 +263,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_7">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -260,7 +296,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="alignment">
@@ -273,6 +309,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_6">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -297,7 +342,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="alignment">
@@ -310,6 +355,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_5">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -334,7 +388,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="alignment">
@@ -347,6 +401,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_4">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -371,7 +434,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="alignment">
@@ -384,6 +447,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -426,7 +498,7 @@
      <item>
       <widget class="QLabel" name="titleB">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Б) Сформировать первые 15 символов М-последовательности для единичных начальных символов</string>
@@ -472,6 +544,15 @@
        </item>
        <item>
         <widget class="QLabel" name="label_9">
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>14</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
@@ -496,7 +577,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="maxLength">
@@ -544,7 +625,7 @@
      <item>
       <widget class="QLabel" name="titleC">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>В) Ввести обратные связи в регистре сдвига в соответствии с проверочным полиномом h(x)</string>

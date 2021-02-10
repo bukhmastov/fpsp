@@ -44,7 +44,7 @@
      <item>
       <widget class="QLabel" name="titleA">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Составить уравнение для символов троичной М - последовательности с периодом N=8, если h(x)=%h%</string>
@@ -75,7 +75,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>C&lt;sub&gt;2+i&lt;/sub&gt; =</string>
@@ -98,8 +98,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -112,7 +119,7 @@
        <item>
         <widget class="QLabel" name="label_3">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>C&lt;sub&gt;0+i&lt;/sub&gt; +</string>
@@ -135,8 +142,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -149,7 +163,7 @@
        <item>
         <widget class="QLabel" name="label_4">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>C&lt;sub&gt;1+i&lt;/sub&gt;</string>
@@ -190,7 +204,7 @@
      <item>
       <widget class="QLabel" name="titleB">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Сформировать М-последовательность для начального состояния С0=%c0%, С1=%c1%</string>
@@ -221,7 +235,7 @@
        <item>
         <widget class="QLabel" name="label_10">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>F =</string>
@@ -244,11 +258,18 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
+         <property name="styleSheet">
+          <string>font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+         </property>
          <property name="maxLength">
-          <number>7</number>
+          <number>8</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -289,7 +310,7 @@
      <item>
       <widget class="QLabel" name="titleC">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Ввести обратные связи в регистре сдвига с соответствующими коэффициентами умножения</string>
@@ -350,7 +371,7 @@
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:img/objects/circuit-template(s=2).png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QSpinBox" name="inputA0">
+         <widget class="QSpinBox" name="inputA1">
           <property name="geometry">
            <rect>
             <x>170</x>
@@ -360,7 +381,7 @@
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+           <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -379,16 +400,16 @@
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+           <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="text">
-           <string>a0</string>
+           <string>a1</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
-         <widget class="QSpinBox" name="inputA1">
+         <widget class="QSpinBox" name="inputA0">
           <property name="geometry">
            <rect>
             <x>305</x>
@@ -398,7 +419,7 @@
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+           <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -417,10 +438,10 @@
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+           <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="text">
-           <string>a1</string>
+           <string>a0</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>

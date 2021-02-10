@@ -22,7 +22,7 @@ void ScreenTask10::init() {
         cA0 = 1;
         cA1 = 2;
         break;
-    case 2:
+    case 1:
         h = "2+2x+x<sup>2</sup>";
         c0 = 0;
         c1 = 2;

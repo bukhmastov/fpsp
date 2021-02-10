@@ -21,7 +21,7 @@ void ScreenTask4::init() {
     case 1:
         n = 16;
         h5 = "+1+1+1+1-1-1-1-1+1+1+1+1-1-1-1-1";
-        h8 = "+1+1-1+1-1-1+1-1+1+1-1+1-1-1+1-1";
+        h8 = "+1-1-1+1-1+1+1-1+1-1-1+1-1+1+1-1";
         break;
     }
     ui->titleB->setText(ui->titleB->text().replace("%n%", QString::number(n)));

@@ -10,20 +10,21 @@ ScreenTask3::~ScreenTask3() {
 }
 
 void ScreenTask3::init() {
+    sequence.clear();
     int n;
     switch (rnd() % 6) {
     default:
-    case 0: n = 3;  sequence = "+1+1-1"; break;
-    case 1: n = 4;  sequence = "+1+1-1+1"; break;
-    case 2: n = 5;  sequence = "+1+1+1–1+1"; break;
-    case 3: n = 7;  sequence = "+1+1+1–1–1+1–1"; break;
-    case 4: n = 11; sequence = "+1+1+1–1–1–1+1–1–1+1–1"; break;
-    case 5: n = 13; sequence = "+1+1+1+1+1–1–1+1+1-1+1–1+1"; break;
+    case 0: n = 3;  sequence.push_back("+1+1-1"); sequence.push_back("+1-1+1"); break;
+    case 1: n = 4;  sequence.push_back("+1+1-1+1"); sequence.push_back("+1+1+1-1"); break;
+    case 2: n = 5;  sequence.push_back("+1+1+1-1+1"); break;
+    case 3: n = 7;  sequence.push_back("+1+1+1-1-1+1-1"); break;
+    case 4: n = 11; sequence.push_back("+1+1+1-1-1-1+1-1-1+1-1"); break;
+    case 5: n = 13; sequence.push_back("+1+1+1+1+1-1-1+1+1-1+1-1+1"); break;
     }
     ui->title->setText(ui->title->text().replace("%n%", QString::number(n)));
     if (readOnly) {
         ui->input->setReadOnly(true);
-        ui->input->setText(sequence);
+        ui->input->setText(sequence.at(0));
     }
 }
 
@@ -31,7 +32,7 @@ bool ScreenTask3::validate(Core* core, QString* message) {
     if (readOnly) {
         return true;
     }
-    if (sequence == ui->input->text()) {
+    if (std::find(sequence.begin(), sequence.end(), ui->input->text()) != sequence.end()) {
         message->append(Static::messageAnswerRight);
         core->changeScore(2);
     } else {

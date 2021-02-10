@@ -2,6 +2,9 @@
 #include <QString>
 #include <QChar>
 
+QString Static::worktype = "Лабораторная работа"; // "Лабораторная работа" "Практическое занятие"
+QString Static::worktypeShort = "ЛР"; // "ЛР" "ПЗ"
+
 int Static::scoreInitial = 50;
 int Static::score4quetion = 2;
 int Static::score4task = 1;

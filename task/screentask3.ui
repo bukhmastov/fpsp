@@ -44,7 +44,7 @@
      <item>
       <widget class="QLabel" name="title">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Сформировать последовательность Баркера с периодом N = %n%</string>
@@ -60,7 +60,7 @@
      <item>
       <widget class="QLabel" name="title_2">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Используется двоичный алфавит {+1, -1}</string>
@@ -107,7 +107,7 @@
        <item>
         <widget class="QLabel" name="label_10">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>F =</string>
@@ -130,8 +130,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

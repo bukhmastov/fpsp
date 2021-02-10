@@ -44,7 +44,7 @@
      <item>
       <widget class="QLabel" name="title">
        <property name="styleSheet">
-        <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Над полем GF(2&lt;sup&gt;4&lt;/sup&gt;), pi(x) = 1+x+x&lt;sup&gt;4&lt;/sup&gt;, a = x = 0010, сформировать редицимированную последовательность (РП) с оставным периодом N = 15 на основе известной характеристической последовательности (ХП) с периодом J = 3, используя правило формирования (ПФ)</string>
@@ -123,7 +123,7 @@
        <item>
         <widget class="QLabel" name="label_10">
          <property name="styleSheet">
-          <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>FРП =</string>
@@ -146,8 +146,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>16</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string>font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="maxLength">
           <number>15</number>

@@ -32,8 +32,8 @@ private:
     int x4;
     int x5;
     int x6;*/
-    QString h1;
-    QString h2;
+    QString pi;
+    QString hx;
     int a;
     //QString polynomC;
     bool relayH1 = false;
